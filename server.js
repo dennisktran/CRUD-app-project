@@ -4,7 +4,7 @@ const methodOverride = require('method-override');
 const session        = require('express-session');
 const app            = express();
 
-
+//BCRYPT
 require('./db/db');
 
 
