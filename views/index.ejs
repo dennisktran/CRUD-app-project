@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Projecy</title>
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button class="sign-up-btn">sign up</button>
+        <div class="modal">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h1>Sign Up</h1>
+              </div>
+              <div class="modal-body">
+                  <form action="signup" method="POST">
+                      <input type="text" name="name" placeholder="name">
+                      <input type="email" name="name" placeholder="email">
+                      <input type="password" name="password" placeholder="password">
+                      <input type="password" name="passwordcheck" placeholder="password check">
+                      <button class="sign-up-modal">Sign Up</button>
+                  </form>
+              </div>
+          </div>
+        </div>
+        <button class="log-in-btn">Log in</button>
+        <div class="modal">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h1>Log In</h1>
+              </div>
+              <div class="modal-body">
+                  <form action="login" method="POST">
+                      <input type="text" name="name" placeholder="name">
+                      <input type="password" name="password" placeholder="password">
+                      <button class="log-in-modal">Log In</button>
+                  </form>
+              </div>
+          </div>
+      </div>      
+      </nav>
+    <h1>FORTNITE MANIA </h1>
+    </header>
+    <main>
+      <div class="filter-div">
+        <input type="text" name="search" placeholder="search for video">
+      </div>
+      <section>
+        <article class="">
+          <video src="videofile.ogg" autoplay poster="posterimage.jpg">
+
+          </video>
+        </article>
+        <article class="">
+
+        </article>
+      </section>
+      <section>
+        <!--horizontal video viewer-->
+      </section>
+    </main>
+    <script src="js/app.js"></script>
+  </body>
+</html>

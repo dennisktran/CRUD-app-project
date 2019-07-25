@@ -1,8 +1,9 @@
 const express        = require('express');
 const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
-const session        = require('express-session');
+const session        = require('express-session')
 const app            = express();
+const userController = require('./controllers/userController');
 
 //BCRYPT
 require('./db/db');
@@ -13,21 +14,20 @@ require('./db/db');
 // const articlesController = require('./controllers/articles.js');
 // const usersController = require('./controllers/users');
 
-// before our controllers we set up the session
-
+//INCLUDE ROUTES
 app.use(session({
   secret: 'THIS IS A RANDOM SECRET STRING',
-  resave: false, 
-  saveUninitialized: false 
+  resave: false,
+  saveUninitialized: false
 }));
+
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
+app.use(express.static('public'));
 
-// app.use('/authors', authorsController);
-// app.use('/articles', articlesController);
-// app.use('/auth', usersController);
-3
+
+
 app.get('/', (req, res) => {
   res.render('index.ejs', {
   });
