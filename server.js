@@ -3,6 +3,7 @@ const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 const session        = require('express-session')
 const app            = express();
+const userController = require('./controllers/userController');
 
 //BCRYPT
 require('./db/db');
@@ -28,7 +29,6 @@ app.use(express.static('public'))
 
 app.get('/', (req, res) => {
   res.render('index.ejs', {
-    //message: req.session.message
   });
 });
 
