@@ -18,4 +18,3 @@ window.addEventListener('click', function(e) {
         modalSignUp.style.display = 'none';
     }
 });
-
