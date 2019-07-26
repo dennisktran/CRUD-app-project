@@ -23,7 +23,7 @@
                     <%for(let i = 0; i < videos.length; i++) {%>
                         <li>
                             <h1><%=videos[i].title%></h1>
-                            <form action="" method="POST">
+                            <form action="/video/<%=videos[i]._id%>?_method=DELETE" method="POST">
                                 <button>Delete</button>
                             </form>
                         </li> 
@@ -63,7 +63,7 @@
                     <form action="/user/<%=user._id%>?_method=DELETE" method="POST">
                         <button>Delete</button>
                     </form>
-                    <form action="/user/<%=user._id%>?_method=PUT" method="post" class="edit-form">
+                    <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-form">
                         <input type="text" name="name" value="<%=user.name%>"/><br/>
                         <input type="email" name="email" value="<%=user.email%>"/><br/>
                         <input type="password" name="password" placeholder="password"/><br/>
