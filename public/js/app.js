@@ -1,7 +1,10 @@
+// btn
 const signUpBtn = document.querySelector('.sign-up-btn');
 const signInBtn = document.querySelector('.log-in-btn');
-const modalSignUp = document.getElementsByClassName('modal')[0];
-const modalLogIn = document.getElementsByClassName('modal')[1];
+
+// modal
+const modalSignUp = document.querySelector('.modal-signup');
+const modalLogIn = document.querySelector('.modal-login');
 
 
 signInBtn.addEventListener('click', function() {
@@ -13,9 +16,8 @@ signUpBtn.addEventListener('click', function() {
 });
 
 window.addEventListener('click', function(e) {
-   if (e.target === modalLogIn || e.target === modalSignUp ) {
+   if (e.target === modalLogIn || e.target === modalSignUp) {
         modalLogIn.style.display = 'none';
         modalSignUp.style.display = 'none';
     }
 });
-

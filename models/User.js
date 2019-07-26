@@ -6,7 +6,7 @@ const userSchema = new mongoose.Schema({
     passwordcheck: {type: String, required: true},
     email: {type: String, required: true},
     videos: [{
-        type: mongoose.Schema.Types.ObjectId,  // ._id
+        type: mongoose.Schema.Types.ObjectId,
         ref: 'Video'
       }],
     likes: Number,

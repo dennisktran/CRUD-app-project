@@ -3,11 +3,10 @@ const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 const session        = require('express-session')
 const app            = express();
-const userController = require('./controllers/userController');
+const userRoutes =  require('./routes/userRoutes');
 
 //BCRYPT
 require('./db/db');
-
 
 // require our controller, Which is the router object
 // const authorsController = require('./controllers/authors');
@@ -26,7 +25,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 app.use(express.static('public'))
 
-
+app.use('/user', userRoutes);
 app.get('/', (req, res) => {
   res.render('index.ejs', {
   });
