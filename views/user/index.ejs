@@ -20,17 +20,21 @@
             </article>
             <article>
                 <ul>
-                    <%for(let i = 0; i < user.length; i++) {%>
+                    <%for(let i = 0; i < user.video.length; i++) {%>
                         <li>
                             <h1></h1>
-                            <form action="" method="POST">
+                            <form action="/user/:id/deletevideo?_method=DELETE" method="POST"
                                 <button>Delete</button>
                             </form>
-                        </li> 
-                    <%}%>       
+                        </li>
+                    <%}%>
                 </ul>
-                <button>Upload</button>
-                <div class="modal modal-upload">
+                <form action="/videos" method="post">
+                  <input type="text" name="title" placeholder="Add title"></br>
+                  <textarea name="name" rows="4" cols="40"placeholder="Add video description"></textarea>
+                </form>
+                <button name="upload-btn">Upload</button>
+                <d iv class="modal modal-upload">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1>Upload your Video!</h1>
@@ -40,7 +44,7 @@
                                 <input type="text" name="url" placeholder="url">
                                 <input type="text" name="title" placeholder="title">
                                 <input type="text" name="info" placeholder="info">
-                                <button class="sign-up-modal">UpLoad</button>
+                                <button class="upload-submit-btn">UpLoad</button>
                              </form>
                         </div>
                     </div>
@@ -66,6 +70,6 @@
           </div>
         </div>
     </footer>
-<script src="/js/userIndex.js"></script>  
+<script src="/js/userIndex.js"></script>
 </body>
 </html>

@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Video = require('../models/Videos');
 const bcrypt  = require('bcryptjs');
 
 module.exports = {
@@ -34,11 +35,15 @@ module.exports = {
     home: async (req, res) => {
         try{
             const foundUser = await User.findById(req.params.id);
+            const getVideo = await Video.find({})
             res.render('user/index.ejs', {
-                user: foundUser
+                user: foundUser,
+                videos: userVideo
             });
-            console.log(req.params.id)
+            console.log(userVideo)
+
         } catch(err) {
+            console.log(err)
             res.send(err);
         };
     },
@@ -54,7 +59,25 @@ module.exports = {
              res.redirect('/user/' + createdUser._id);
 
         } catch(err) {
+            console.log(err)
             res.send(err);
+        }
+    },
+    deleteUser: async (req, res) => {
+        try{
+            const deleteUser = await User.findByIdAndDelete(req.params.id);
+            // const deleteVideo = await Video.remove({ _id: {$in: deleteUser.videos}});
+            res.redirect('/');
+        } catch(err) {
+            res.send(err);
+        }
+    },
+    editUser: async (req, res) => {
+        try{
+            const foundUser = await User.findByIdAndUpdate(req.params.id, req.body);
+            res.redirect('/user/' + foundUser._id)
+        }catch(err){
+            res.send(err)
         }
     }
 }
