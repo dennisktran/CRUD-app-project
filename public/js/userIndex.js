@@ -1,3 +1,4 @@
+
 // btn
 const accountBtn = document.querySelector('.account-btn');
 const uploadBtn = document.querySelector('.upload-btn');
