@@ -29,7 +29,7 @@
                         </li> 
                     <%}%>       
                 </ul>
-                <button>Upload</button>
+                <button class="upload-btn">Upload</button>
                 <div class="modal modal-upload">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -40,7 +40,7 @@
                                 <input type="text" name="url" placeholder="url">
                                 <input type="text" name="title" placeholder="title">
                                 <input type="text" name="info" placeholder="info">
-                                <button class="sign-up-modal">UpLoad</button>
+                                <button class="">UpLoad</button>
                              </form>
                         </div>
                     </div>
@@ -65,8 +65,8 @@
                     <form action="/user/<%=user._id%>?_method=PUT" method="post" class="edit-form">
                         <input type="text" name="name" value="<%=user.name%>"/><br/>
                         <input type="email" name="email" value="<%=user.email%>"/><br/>
-                        <input type="password" name="password" value="<%=user.password%>"/><br/>
-                        <input type="password" name="passwordcheck" value="<%=user.passwordcheck%>"/><br/>
+                        <input type="password" name="password" placeholder="password"/><br/>
+                        <input type="password" name="passwordcheck" placeholder="password check"/><br/>
                         <input type="text" name="pic" value="<%=user.pic%>"/><br/>
                         <button>Edit</button>
                     </form>
