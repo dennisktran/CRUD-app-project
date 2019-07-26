@@ -35,6 +35,7 @@ module.exports = {
     home: async (req, res) => {
         try{
             const foundUser = await User.findById(req.params.id);
+            const getVideo = await Video.find({})
             res.render('user/index.ejs', {
                 user: foundUser
             });
