@@ -1,4 +1,5 @@
-const Video = require('..models/Videos')
+const Video = require('../models/Videos');
+const User = require('../models/User');
 
 module.exports = {
   delete: async (req, res) => {

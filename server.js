@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const session        = require('express-session')
 const app            = express();
 const userRoutes =  require('./routes/userRoutes');
+const videoRoutes =  require('./routes/videoRoutes');
 
 //BCRYPT
 require('./db/db');
@@ -26,6 +27,7 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'))
 
 app.use('/user', userRoutes);
+app.use('/video', videoRoutes);
 app.get('/', (req, res) => {
   res.render('index.ejs', {
   });

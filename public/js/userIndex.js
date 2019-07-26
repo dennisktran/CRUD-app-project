@@ -1,3 +1,4 @@
+
 // btn
 const accountBtn = document.querySelector('.account-btn');
 const uploadBtn = document.querySelector('.upload-btn')
@@ -15,8 +16,9 @@ uploadBtn.addEventListener('click', function() {
 
 
 window.addEventListener('click', function(e) {
-    if (e.target === modalAccount ) {
+    if (e.target === modalAccount || e.target === modalUpload ) {
          modalAccount.style.display = 'none';
+         modalUpload.style.display = 'none';
      }
  });
 

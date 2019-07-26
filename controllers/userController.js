@@ -37,10 +37,13 @@ module.exports = {
             const foundUser = await User.findById(req.params.id);
             const getVideo = await Video.find({})
             res.render('user/index.ejs', {
-                user: foundUser
+                user: foundUser,
+                videos: userVideo
             });
-            console.log(req.params.id)
+            console.log(userVideo)
+
         } catch(err) {
+            console.log(err)
             res.send(err);
         };
     },
@@ -56,6 +59,7 @@ module.exports = {
              res.redirect('/user/' + createdUser._id);
 
         } catch(err) {
+            console.log(err)
             res.send(err);
         }
     },
@@ -66,6 +70,14 @@ module.exports = {
             res.redirect('/');
         } catch(err) {
             res.send(err);
+        }
+    },
+    editUser: async (req, res) => {
+        try{
+            const foundUser = await User.findByIdAndUpdate(req.params.id, req.body);
+            res.redirect('/user/' + foundUser._id)
+        }catch(err){
+            res.send(err)
         }
     }
 }
