@@ -55,6 +55,7 @@ module.exports = {
              res.redirect('/user/' + createdUser._id);
 
         } catch(err) {
+            console.log(err)
             res.send(err);
         }
     },
