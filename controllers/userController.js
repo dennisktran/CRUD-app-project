@@ -35,11 +35,21 @@ module.exports = {
     home: async (req, res) => {
         try{
             const foundUser = await User.findById(req.params.id);
+            const getVideo = await Video.find({});
+            const userVideo = [];
+            for(let i = 0; i < foundUser.videos.length; i++) {
+                if(foundUser.videos[i].toString() === getVideo[i]._id.toString()) {
+                    userVideo.push(getVideo[i]);
+                }
+            }
             res.render('user/index.ejs', {
-                user: foundUser
+                user: foundUser,
+                videos: userVideo
             });
-            console.log(req.params.id)
+            console.log(userVideo)
+            
         } catch(err) {
+            console.log(err)
             res.send(err);
         };
     },
