@@ -61,8 +61,8 @@ module.exports = {
     deleteUser: async (req, res) => {
         try{
             const deleteUser = await User.findByIdAndDelete(req.params.id);
-            const deleteVideo = await Video.remove({ _id: {$in: deleteUser.videos}});
-            res.render('/');
+            // const deleteVideo = await Video.remove({ _id: {$in: deleteUser.videos}});
+            res.redirect('/');
         } catch(err) {
             res.send(err);
         }
