@@ -47,7 +47,7 @@ module.exports = {
                 videos: userVideo
             });
             console.log(userVideo)
-            
+
         } catch(err) {
             console.log(err)
             res.send(err);
