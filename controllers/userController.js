@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Video = require('../models/Videos');
 const bcrypt  = require('bcryptjs');
 
 module.exports = {
@@ -53,6 +54,15 @@ module.exports = {
             req.session.logged = true;
              res.redirect('/user/' + createdUser._id);
 
+        } catch(err) {
+            res.send(err);
+        }
+    },
+    deleteUser: async (req, res) => {
+        try{
+            const deleteUser = await User.findByIdAndDelete(req.params.id);
+            // const deleteVideo = await Video.remove({ _id: {$in: deleteUser.videos}});
+            res.redirect('/');
         } catch(err) {
             res.send(err);
         }
