@@ -20,9 +20,9 @@
             </article>
             <article>
                 <ul>
-                    <%for(let i = 0; i < user.length; i++) {%>
+                    <%for(let i = 0; i < videos.length; i++) {%>
                         <li>
-                            <h1></h1>
+                            <h1><%=videos[i].title%></h1>
                             <form action="" method="POST">
                                 <button>Delete</button>
                             </form>
@@ -35,7 +35,7 @@
                         <div class="modal-header">
                             <h1>Upload your Video!</h1>
                         </div>
-                        <div class="modal-body">
+                        <div class="modal-body">`
                             <form action="/video/<%=user._id%>" method="POST">
                                 <input type="text" name="user" value="<%=user.name%>" class="upload-creator">
                                 <input type="text" name="url" placeholder="url">
