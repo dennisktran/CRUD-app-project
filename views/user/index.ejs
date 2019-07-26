@@ -62,6 +62,14 @@
                     <form action="/user/<%=user._id%>?_method=DELETE" method="POST">
                         <button>Delete</button>
                     </form>
+                    <form action="/user/<%=user._id%>?_method=PUT" method="post" class="edit-form">
+                        <input type="text" name="name" value="<%=user.name%>"/><br/>
+                        <input type="email" name="email" value="<%=user.email%>"/><br/>
+                        <input type="password" name="password" value="<%=user.password%>"/><br/>
+                        <input type="password" name="passwordcheck" value="<%=user.passwordcheck%>"/><br/>
+                        <input type="text" name="pic" value="<%=user.pic%>"/><br/>
+                        <button>Edit</button>
+                    </form>
               </div>
           </div>
         </div>

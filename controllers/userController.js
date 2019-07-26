@@ -66,5 +66,13 @@ module.exports = {
         } catch(err) {
             res.send(err);
         }
+    },
+    editUser: async (req, res) => {
+        try{
+            const foundUser = await User.findByIdAndUpdate(req.params.id, req.body);
+            res.redirect('/user/' + foundUser._id)
+        }catch(err){
+            res.send(err)
+        }
     }
 }
