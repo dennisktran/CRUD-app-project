@@ -2,9 +2,70 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
-    <h1>hello</h1>
+    <header>
+        <h1><%=user.name%></h1>
+    </header>
+    <main>
+        <section>
+            <article>
+                <video>
+                </video>
+                <div>
+                    <span></span>
+                    <span></span>
+                </div>
+            </article>
+            <article>
+                <ul>
+                    <%for(let i = 0; i < user.length; i++) {%>
+                        <li>
+                            <h1></h1>
+                            <form action="" method="POST">
+                                <button>Delete</button>
+                            </form>
+                        </li> 
+                    <%}%>       
+                </ul>
+                <button>Upload</button>
+                <div class="modal modal-upload">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1>Upload your Video!</h1>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/user" method="POST">
+                                <input type="text" name="url" placeholder="url">
+                                <input type="text" name="title" placeholder="title">
+                                <input type="text" name="info" placeholder="info">
+                                <button class="sign-up-modal">UpLoad</button>
+                             </form>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <button class="account-btn">Account</button>
+        <div class="modal modal-account">
+          <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Account</h1>
+                </div>
+                <div class="modal-body">
+                    <a href="/user/logout">Logout</a>
+                    <form action="/user/<%=user._id%>?_method=DELETE" method="POST">
+                        <button>Delete</button>
+                    </form>
+              </div>
+          </div>
+        </div>
+    </footer>
+<script src="/js/userIndex.js"></script>  
 </body>
 </html>

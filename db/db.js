@@ -4,7 +4,8 @@ const connectionString = 'mongodb://localhost/fortnite';
 
 
 mongoose.connect(connectionString, {
-  useNewUrlParser: true
+  useNewUrlParser: true,
+  useCreateIndex: true,
 });
 
 mongoose.connection.on('connected', () => {

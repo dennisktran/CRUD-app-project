@@ -26,7 +26,7 @@ app.use(methodOverride('_method'));
 app.use(express.static('public'));
 
 
-// app.use('/user', userRoutes);
+app.use('/user', userRoutes);
 app.get('/', (req, res) => {
   res.render('index.ejs', {
   });
