@@ -1,16 +1,31 @@
+@font-face {
+    src: url(/fonts/fortnite.ttf);
+    font-family: fortnite;
+}
+
 * {
     margin: 0px;
     padding: 0px;
+    font-family: fortnite;
 }
 
-/*
-body {
-
+header {
+        background: #03A9F4;
+        color: white;
+        height: 65px;
+        letter-spacing: 5px;
 }
 
-.container {
+nav {
+    text-align: right;
+}
 
-} */
+header h1 {
+    text-align: center;
+    padding-top: 5px;
+    position: relative;
+    font-size: 3em;
+}
 
 /*  MODAL */
 
@@ -30,11 +45,16 @@ body {
     background: white;
     margin: 6% auto;
     padding: 20px;
-    width: 40%;
+    width: 80%;
     border-radius: 18px;
     box-shadow: 0 5px 8px 0 rgba(0,0,0,0.2), 0 7px 20px 0 rgba(0,0,0,0.2);
     animation-name: modalOpen;
-    animation-duration: 1s;
+    animation-duration: 1.5s;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
 }
 
 .modal p {
@@ -42,19 +62,47 @@ body {
 }
 
 .modal-header {
-    text-align: center;
-    color: #d8101d;
+    color: #2196F3;
 }
 
-form {
+.modal-header h1 {
+    text-align: center;
+}
+
+/*   form     */
+
+.form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-input, .submit-btn {
+
+.edit-form{
+    display: none;
+}
+
+/*  Button Input  */
+
+.hamburger {
+    background: #03a9f4;
+    color: white;
+    font-size: 24px;
+}
+
+.ham-btn {
+    border: 0px;
+    background: none;
+    float: right;
+}
+
+.edit-btn {
+    align-self: center;
+}
+
+input, .btn {
     text-align: center;
-    width: 50%;
+    width: 80%;
     color: black;
     font-weight: bold;
     letter-spacing: 3px;
@@ -65,17 +113,34 @@ input, .submit-btn {
     background: rgba(0,0,0,0);
 }
 
-input:hover, .submit-btn:hover {
-    box-shadow: 0 0 5px #d8101d;
+input:hover, .btn:hover {
+    box-shadow: 0 0 5px #2196F3;
 } 
 
-.okay-btn {
-    width: 100%;
-    height: 23px;
-    border: 0;
-    border-radius: 5px;
-    background: #d8101d;
-    font-weight: bold;
-    letter-spacing: 2px;
-    margin-top: 2px;
+.edit-form{
+    display: none;
+}
+
+/*   achor tags    */
+
+
+/*  user index  */
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section article {
+    margin: 1% auto;
+    border: 1px solid;
+    width: 95%;
+}
+
+/*  KEY FRAMES  */
+
+@keyframes modalOpen {
+    from {opacity: 0;}
+    to {opacity: 1;}
 }
