@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>user index</title>
+    <script src="https://kit.fontawesome.com/5af6d749d4.js"></script>
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
     <header>
+        <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
         <h1><%=user.name%></h1>
     </header>
     <main>
         <section>
             <article>
-                <video>
+                <video src="<%=likedVideo.url%>">
                 </video>
                 <div>
-                    <span></span>
-                    <span></span>
+                    <span><%=likedVideo.likes%></span>
+                    <span><%=likedVideo.dislikes%></span>
                 </div>
             </article>
             <article>
                 <ul>
-                    <%for(let i = 0; i < user.video.length; i++) {%>
+                    <%for(let i = 0; i < videos.length; i++) {%>
                         <li>
-                            <h1>video[i].length</h1>
-                            <form action="/user/:id/deletevideo?_method=DELETE" method="POST"
+                            <h1><%=videos[i].title%></h1>
+                            <form action="/video/<%=videos[i]._id%>?_method=DELETE" method="POST">
                                 <button>Delete</button>
                             </form>
-                        </li>
-                    <%}%>
+                        </li> 
+                    <%}%>       
                 </ul>
-                <form action="/videos" method="post">
-                  <input type="text" name="title" placeholder="Add title"></br>
-                  <textarea name="name" rows="4" cols="40"placeholder="Add video description"></textarea>
-                </form>
-                <button name="upload-btn">Upload</button>
-                <d iv class="modal modal-upload">
+                <button class="upload-btn">Upload</button>
+                <div class="modal modal-upload">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h1>Upload your Video!</h1>
                         </div>
                         <div class="modal-body">
-                            <form action="/user" method="POST">
-                                <input type="text" name="url" placeholder="url">
-                                <input type="text" name="title" placeholder="title">
-                                <input type="text" name="info" placeholder="info">
-                                <button class="upload-submit-btn">UpLoad</button>
+                            <form action="/video/<%=user._id%>" method="POST" class="form">
+                                <input type="text" name="user" value="<%=user.name%>" class="upload-creator"/>
+                                <input type="text" name="url" placeholder="url"/>
+                                <input type="text" name="title" placeholder="title"/>
+                                <input type="text" name="info" placeholder="info"/>
+                                <input type="text" name="tags" placeholder="tags"/>
+                                <button class="submit-btn btn">UpLoad</button>
                              </form>
                         </div>
                     </div>
@@ -59,17 +59,26 @@
         <div class="modal modal-account">
           <div class="modal-content">
                 <div class="modal-header">
+                    <a href="/user/logout" class="log-out">Logout</a>
                     <h1>Account</h1>
                 </div>
-                <div class="modal-body">
-                    <a href="/user/logout">Logout</a>
-                    <form action="/user/<%=user._id%>?_method=DELETE" method="POST">
-                        <button>Delete</button>
+                <div class="modal-body modal-account">
+                    <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-form form">
+                        <input type="text" name="name" value="<%=user.name%>"/><br/>
+                        <input type="email" name="email" value="<%=user.email%>"/><br/>
+                        <input type="password" name="password" placeholder="password"/><br/>
+                        <input type="password" name="passwordcheck" placeholder="password check"/><br/>
+                        <input type="text" name="pic" placeholder="pic" value="<%=user.pic%>"/><br/>
+                        <button class="submit-btn btn">Edit</button>
+                    </form>
+                    <button class="edit-btn btn">Edit</button>
+                    <form action="/user/<%=user._id%>?_method=DELETE" method="POST" class="form">
+                        <button class=" delete-btn btn">Delete</button>
                     </form>
               </div>
           </div>
         </div>
     </footer>
-<script src="/js/userIndex.js"></script>
+<script src="/js/userIndex.js"></script>  
 </body>
 </html>
