@@ -8,30 +8,59 @@
 <body>
     <header>
         <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
+        <div class="modal modal-account">
+          <div class="modal-content">
+                <div class="modal-header">
+                    <a href="/user/logout" class="log-out">Logout</a>
+                    <h1>Account</h1>
+                </div>
+                <div class="modal-body modal-account">
+                    <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-form form">
+                        <input type="text" name="name" value="<%=user.name%>"/><br/>
+                        <input type="email" name="email" value="<%=user.email%>"/><br/>
+                        <input type="password" name="password" placeholder="password"/><br/>
+                        <input type="password" name="passwordcheck" placeholder="password check"/><br/>
+                        <input type="text" name="pic" placeholder="pic" value="<%=user.pic%>"/><br/>
+                        <button class="submit-btn btn">Edit</button>
+                    </form>
+                    <button class="edit-btn btn">Edit</button>
+                    <form action="/user/<%=user._id%>?_method=DELETE" method="POST" class="form">
+                        <button class=" delete-btn btn">Delete</button>
+                    </form>
+              </div>
+          </div>
+        </div>
         <h1><%=user.name%></h1>
     </header>
     <main>
         <section>
-            <article>
-                <div class="upload-div">
-                    <h1>upload video here</h1>
-                </div>
-                <div class="user-video">
+            <article class="center-art">
+                <div class="user-vid">
+                    <%if (likedVideo) {%> 
                     <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
-                    <div>
-                        <span><%=likedVideo.title%></span>
-                        <span><%=likedVideo.likes%></span>
-                        <span><%=likedVideo.dislikes%></span>
+                    <div class="info-div">
+                        <span>Title: <%=likedVideo.title%></span>
+                        <span><i class="fas fa-thumbs-up">:<%=likedVideo.likes%></i></span>
+                        <span><i class="fas fa-thumbs-down">:<%=likedVideo.dislikes%></i></span>
                     </div>
+                    <div>
+                        <ul>
+                            <%for(let i = 0; i < likedVideo.comments; i ++){%>
+                                <li><%=likedVideo[i].comments%></li>
+                            <%}%>
+                        </ul>    
+                    </div>
+                    <%}%>
                 </div>
             </article>
             <article>
+                <h1><%=user.name%> video list</h1>
                 <ul>
                     <%for(let i = 0; i < userVideos.videos.length; i++) {%>
-                        <li>
+                        <li class="user-vid-list">
                             <h1><%=userVideos.videos[i].title%></h1>
                             <form action="/video/<%=userVideos.videos[i]._id%>?_method=DELETE" method="POST">
-                                <button>Delete</button>
+                                <button class="">Delete</button>
                             </form>
                         </li> 
                     <%}%>       
@@ -55,34 +84,9 @@
                     </div>
                 </div>
             </article>
-            <div>
-            </div>
         </section>
     </main>
     <footer>
-        <button class="account-btn">Account</button>
-        <div class="modal modal-account">
-          <div class="modal-content">
-                <div class="modal-header">
-                    <a href="/user/logout" class="log-out">Logout</a>
-                    <h1>Account</h1>
-                </div>
-                <div class="modal-body modal-account">
-                    <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-form form">
-                        <input type="text" name="name" value="<%=user.name%>"/><br/>
-                        <input type="email" name="email" value="<%=user.email%>"/><br/>
-                        <input type="password" name="password" placeholder="password"/><br/>
-                        <input type="password" name="passwordcheck" placeholder="password check"/><br/>
-                        <input type="text" name="pic" placeholder="pic" value="<%=user.pic%>"/><br/>
-                        <button class="submit-btn btn">Edit</button>
-                    </form>
-                    <button class="edit-btn btn">Edit</button>
-                    <form action="/user/<%=user._id%>?_method=DELETE" method="POST" class="form">
-                        <button class=" delete-btn btn">Delete</button>
-                    </form>
-              </div>
-          </div>
-        </div>
     </footer>
 <script src="/js/userIndex.js"></script>  
 </body>

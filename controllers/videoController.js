@@ -2,6 +2,9 @@ const Video = require('../models/Videos');
 const User = require('../models/User');
 
 module.exports = {
+  show: async (req, res) => {
+    
+  },
   createVideo: async (req, res) => {
     try{
         const createVideo = await Video.create(req.body);

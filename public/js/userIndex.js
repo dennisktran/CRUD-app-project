@@ -1,5 +1,5 @@
 // btn
-const accountBtn = document.querySelector('.account-btn');
+const hamBtn = document.querySelector('.ham-btn');
 const uploadBtn = document.querySelector('.upload-btn');
 const editBtn = document.querySelector('.edit-btn');
 const deleteBtn = document.querySelector('.delete-btn');
@@ -11,7 +11,7 @@ const modalUpload = document.querySelector('.modal-upload');
 const modalEditForm = document.querySelector('.edit-form');
 
 // event listeners
-accountBtn.addEventListener('click', function() {
+hamBtn.addEventListener('click', function() {
     modalAccount.style.display = 'block';
 });
 
