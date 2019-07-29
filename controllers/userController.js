@@ -34,7 +34,7 @@ module.exports = {
     },
     home: async (req, res) => {
         try{
-            // const userDiv =  await document.querySelector('.user-div');
+            // const userDiv = document.querySelector('.user-div');
             const foundUser = await User.findById(req.params.id);
             const userVideos = await User.findById(req.params.id).populate('videos');
             // const isVideoEmpty = () => {
@@ -42,8 +42,9 @@ module.exports = {
             //         userDiv.getElementsByClassName.display = 'block';
             //     }
             // }
+            // isVideoEmpty();
             let mostLikes = 0;
-            let likedVideo = {};
+            let likedVideo = null;
             for(let i = 0; i < userVideos.videos.length; i++) {
                 if(userVideos.videos[i].likes > mostLikes) 
                 mostLikes = userVideos.videos[i].likes;
