@@ -36,6 +36,13 @@ module.exports = {
         try{
             const foundUser = await User.findById(req.params.id);
             const getVideo = await Video.find({});
+            let mostLikes = 0;
+            let likedVideo = '';
+            for(let i = 0; i < getVideo.length; i++) {
+                if(getVideo[i].likes > mostLikes) 
+                mostLikes = getVideo[i].likes;
+                likedVideo = getVideo[i];
+            }
             const userVideo = [];
             for(let i = 0; i < foundUser.videos.length; i++) {
                 if(foundUser.videos[i].toString() === getVideo[i]._id.toString()) {
@@ -44,10 +51,11 @@ module.exports = {
             }
             res.render('user/index.ejs', {
                 user: foundUser,
-                videos: userVideo
+                videos: userVideo,
+                likedVideo: likedVideo
             });
             console.log(userVideo)
-
+            
         } catch(err) {
             console.log(err)
             res.send(err);
