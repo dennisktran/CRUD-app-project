@@ -54,7 +54,7 @@ module.exports = {
                 videos: userVideo,
                 likedVideo: likedVideo
             });
-            console.log(userVideo)
+            console.log(userVideos)
             
         } catch(err) {
             console.log(err)

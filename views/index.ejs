@@ -10,34 +10,38 @@
     <header> 
     <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
       <nav>
-        <button class="sign-up-btn">sign up</button>
-        <div class="modal modal-signup">
-          <div class="modal-content">
-              <div class="modal-header">
-              <h1>Sign Up</h1>
-              </div>
-              <div class="modal-body">
-                  <form action="/user/signup" method="POST">
-                      <input type="text" name="name" placeholder="name">
-                      <input type="email" name="email" placeholder="email">
-                      <input type="password" name="password" placeholder="password">
-                      <input type="password" name="passwordcheck" placeholder="password check">
-                      <button class="sign-up-modal">Sign Up</button>
-                  </form>
-              </div>
-          </div>
-        </div>
         <div class="modal modal-login">
           <div class="modal-content">
               <div class="modal-header">
               <h1>Log In</h1>
               </div>
               <div class="modal-body">
-                  <form action="/user/login" method="POST">
+                  <form action="/user/login" method="POST" class="form">
                       <input type="text" name="name" placeholder="name">
                       <input type="password" name="password" placeholder="password">
-                      <button class="log-in-modal">Log In</button>
+                      <button class="log-in-modal btn">Log In</button>
                   </form>
+                   <button class="sign-up-btn btn">sign up</button>
+        <div class="modal modal-signup">
+              </div>
+          </div>
+        </div>
+        <div class="modal modal-login">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h1>Sign Up</h1>
+              </div>
+              <div class="modal-body">
+                  <form action="/user/signup" method="POST" class="form">
+                      <input type="text" name="name" placeholder="name">
+                      <input type="email" name="email" placeholder="email">
+                      <input type="password" name="password" placeholder="password">
+                      <input type="password" name="passwordcheck" placeholder="password check">
+                      <button class="sign-up-modal btn">Sign Up</button>
+                  </form>
+              </div>
+          </div>
+        </div>
               </div>
           </div>
       </div>
@@ -53,9 +57,11 @@
           <video src="videofile.ogg" autoplay poster="posterimage.jpg">
 
           </video>
-        </article>
-        <article class="">
-
+          <div class="vid-info-home">
+          <span>Info:</span>
+          <span><i class="fas fa-thumbs-up"></i></span>
+          <span><i class="fas fa-thumbs-down"></i></span>
+          </div>
         </article>
       </section>
       <section>
