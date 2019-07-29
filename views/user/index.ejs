@@ -13,7 +13,7 @@
     <main>
         <section>
             <article>
-                <video src="<%=likedVideo.url%>">
+                <video src="<%=likedVideo.url%>" controls>
                 </video>
                 <div>
                     <span><%=likedVideo.likes%></span>
@@ -22,10 +22,10 @@
             </article>
             <article>
                 <ul>
-                    <%for(let i = 0; i < videos.length; i++) {%>
+                    <%for(let i = 0; i < userVideos.videos.length; i++) {%>
                         <li>
-                            <h1><%=videos[i].title%></h1>
-                            <form action="/video/<%=videos[i]._id%>?_method=DELETE" method="POST">
+                            <h1><%=userVideos.videos[i].title%></h1>
+                            <form action="/video/<%=userVideos.videos[i]._id%>?_method=DELETE" method="POST">
                                 <button>Delete</button>
                             </form>
                         </li> 
