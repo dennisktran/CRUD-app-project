@@ -7,8 +7,9 @@ const videoSchema = new mongoose.Schema({
   title: {type: String, required: true},
   likes: Number,
   dislikes: Number,
-  comments: String
-})
+  comments: String,
+  tags:{type: String, required: true}
+});
 
 const Video = mongoose.model('Video', videoSchema);
 

@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>user index</title>
+    <script src="https://kit.fontawesome.com/5af6d749d4.js"></script>
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
     <header>
+        <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
         <h1><%=user.name%></h1>
     </header>
     <main>
         <section>
             <article>
-                <video>
+                <video src="<%=likedVideo.url%>">
                 </video>
                 <div>
-                    <span></span>
-                    <span></span>
+                    <span><%=likedVideo.likes%></span>
+                    <span><%=likedVideo.dislikes%></span>
                 </div>
             </article>
             <article>
@@ -35,13 +37,14 @@
                         <div class="modal-header">
                             <h1>Upload your Video!</h1>
                         </div>
-                        <div class="modal-body">`
-                            <form action="/video/<%=user._id%>" method="POST">
-                                <input type="text" name="user" value="<%=user.name%>" class="upload-creator">
-                                <input type="text" name="url" placeholder="url">
-                                <input type="text" name="title" placeholder="title">
-                                <input type="text" name="info" placeholder="info">
-                                <button class="">UpLoad</button>
+                        <div class="modal-body">
+                            <form action="/video/<%=user._id%>" method="POST" class="form">
+                                <input type="text" name="user" value="<%=user.name%>" class="upload-creator"/>
+                                <input type="text" name="url" placeholder="url"/>
+                                <input type="text" name="title" placeholder="title"/>
+                                <input type="text" name="info" placeholder="info"/>
+                                <input type="text" name="tags" placeholder="tags"/>
+                                <button class="submit-btn btn">UpLoad</button>
                              </form>
                         </div>
                     </div>
@@ -56,20 +59,21 @@
         <div class="modal modal-account">
           <div class="modal-content">
                 <div class="modal-header">
+                    <a href="/user/logout" class="log-out">Logout</a>
                     <h1>Account</h1>
                 </div>
-                <div class="modal-body">
-                    <a href="/user/logout">Logout</a>
-                    <form action="/user/<%=user._id%>?_method=DELETE" method="POST">
-                        <button>Delete</button>
-                    </form>
-                    <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-form">
+                <div class="modal-body modal-account">
+                    <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-form form">
                         <input type="text" name="name" value="<%=user.name%>"/><br/>
                         <input type="email" name="email" value="<%=user.email%>"/><br/>
                         <input type="password" name="password" placeholder="password"/><br/>
                         <input type="password" name="passwordcheck" placeholder="password check"/><br/>
-                        <input type="text" name="pic" value="<%=user.pic%>"/><br/>
-                        <button>Edit</button>
+                        <input type="text" name="pic" placeholder="pic" value="<%=user.pic%>"/><br/>
+                        <button class="submit-btn btn">Edit</button>
+                    </form>
+                    <button class="edit-btn btn">Edit</button>
+                    <form action="/user/<%=user._id%>?_method=DELETE" method="POST" class="form">
+                        <button class=" delete-btn btn">Delete</button>
                     </form>
               </div>
           </div>
