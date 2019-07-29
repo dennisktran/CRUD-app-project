@@ -21,11 +21,11 @@ module.exports = {
       const foundUser = await User.findOne({'videos': req.params.id});
       foundUser.videos.remove(req.params.id);
       await foundUser.save();
-      res.redirect('/');
+      res.redirect('/user/' + req.params.id);
       console.log(deleteVideo, '<---- deleted video')
     } catch(err) {
       console.log(err, 'this is the error')
     }
-
+  
   }
 }
