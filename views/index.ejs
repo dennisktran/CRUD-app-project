@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
-    <header> 
+    <header>
     <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
       <nav>
         <div class="modal modal-login">
@@ -49,11 +49,18 @@
         <input type="text" name="search" placeholder="search for video">
       </div>
       <section>
-        <article class="">
-          <video src="videofile.ogg" autoplay poster="posterimage.jpg">
-
-          </video>
-          <div class="vid-info-home">
+        <article>
+            <div class="upload-div">
+                <h1>Top Vid</h1>
+            </div>
+            <div class="user-video">
+                <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
+                <div>
+                    <span><%=likedVideo.title%></span>
+                    <span><%=likedVideo.likes%></span>
+                    <span><%=likedVideo.dislikes%></span>
+                </div>
+            </div
           <span>Info:</span>
           <span><i class="fas fa-thumbs-up"></i></span>
           <span><i class="fas fa-thumbs-down"></i></span>

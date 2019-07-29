@@ -6,13 +6,10 @@ const app            = express();
 const userRoutes =  require('./routes/userRoutes');
 const videoRoutes =  require('./routes/videoRoutes');
 
-//BCRYPT
-require('./db/db');
+const User = require('./models/User');
+const Video = require('./models/Videos');
 
-// require our controller, Which is the router object
-// const authorsController = require('./controllers/authors');
-// const articlesController = require('./controllers/articles.js');
-// const usersController = require('./controllers/users');
+require('./db/db');
 
 //INCLUDE ROUTES
 app.use(session({
@@ -28,9 +25,24 @@ app.use(express.static('public'))
 
 app.use('/user', userRoutes);
 app.use('/video', videoRoutes);
-app.get('/', (req, res) => {
-  res.render('index.ejs', {
-  });
+
+app.get('/', async (req, res) => {
+  try{
+    const displayVids = await Video.find({})
+    let mostLikes = 0;
+    let likedVideo = {};
+    for(let i = 0; i < displayVids.length; i++) {
+        if(displayVids[i].likes > mostLikes)
+        mostLikes = displayVids[i].likes;
+        likedVideo = displayVids[i];
+    }
+    res.render('index.ejs', {
+      likedVideo: likedVideo
+    })
+    console.log(displayVids);
+  } catch(err){
+    console.log(err)
+  }
 });
 
 app.listen(3000, () => {
