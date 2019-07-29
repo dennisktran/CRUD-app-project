@@ -1,4 +1,3 @@
-
 // btn
 const accountBtn = document.querySelector('.account-btn');
 const uploadBtn = document.querySelector('.upload-btn');
@@ -9,7 +8,7 @@ const logOutBtn = document.querySelector('.log-out')
 //modal
 const modalAccount = document.querySelector('.modal-account');
 const modalUpload = document.querySelector('.modal-upload');
-const modalEditForm = document.querySelector('.edit-form')
+const modalEditForm = document.querySelector('.edit-form');
 
 // event listeners
 accountBtn.addEventListener('click', function() {

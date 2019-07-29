@@ -13,11 +13,16 @@
     <main>
         <section>
             <article>
-                <video src="<%=likedVideo.url%>" controls>
-                </video>
-                <div>
-                    <span><%=likedVideo.likes%></span>
-                    <span><%=likedVideo.dislikes%></span>
+                <div class="upload-div">
+                    <h1>upload video here</h1>
+                </div>
+                <div class="user-video">
+                    <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
+                    <div>
+                        <span><%=likedVideo.title%></span>
+                        <span><%=likedVideo.likes%></span>
+                        <span><%=likedVideo.dislikes%></span>
+                    </div>
                 </div>
             </article>
             <article>
