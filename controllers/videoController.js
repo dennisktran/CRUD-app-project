@@ -11,7 +11,7 @@ module.exports = {
         const findUser = await User.findById(req.params.id);
         findUser.videos.push(createVideo);
         await findUser.save();
-        res.redirect('/user/' + req.params.id);
+        res.redirect(`/user/${req.params.id}`);
     }catch(err) {
         console.log(err)
         res.send(err);
