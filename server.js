@@ -37,8 +37,10 @@ app.get('/', async (req, res) => {
         likedVideo = displayVids[i];
     }
     res.render('index.ejs', {
-      likedVideo: likedVideo
-    })
+      logged: req.session.logged,
+      likedVideo: likedVideo,
+      userID: req.session.userId
+    });
     console.log(displayVids);
   } catch(err){
     console.log(err)

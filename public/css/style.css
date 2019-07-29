@@ -38,6 +38,10 @@ li {
     list-style: none;
 }
 
+a {
+    text-decoration: none;
+}
+
 /*  MODAL */
 
 .modal {
@@ -103,10 +107,15 @@ li {
     font-size: 24px;
 }
 
-.ham-btn {
+.ham-btn, .home-btn {
     border: 0px;
     background: none;
-    text-align: right;
+    padding: 5px;
+}
+
+.home-btn {
+    color: white;
+    font-size: 24px;
 }
 
 .edit-btn {
@@ -132,6 +141,11 @@ input:hover, .btn:hover {
 
 .upload-btn {
     width: 23%;
+}
+
+.dislike-btn, .like-btn {
+    border: 0px;
+    font-size: 23px;
 }
 
 .edit-form{
@@ -187,6 +201,13 @@ main {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.home-btn-div {
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+    z-index: 100;
 }
 
 .filter-div {

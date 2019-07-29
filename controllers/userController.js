@@ -11,7 +11,7 @@ module.exports = {
                     req.session.userId = foundUser._id;
                     req.session.name = foundUser.name;
                     req.session.logged = true;
-                    res.redirect('/user/' + foundUser._id)
+                    res.redirect(`/user/${foundUser._id}`)
                 } else {
                     req.session.message = 'Username or password incorrect'
                     res.redirect('/')
@@ -34,15 +34,8 @@ module.exports = {
     },
     home: async (req, res) => {
         try{
-            // const userDiv = document.querySelector('.user-div');
             const foundUser = await User.findById(req.params.id);
             const userVideos = await User.findById(req.params.id).populate('videos');
-            // const isVideoEmpty = () => {
-            //     if (userVideos.videos) {
-            //         userDiv.getElementsByClassName.display = 'block';
-            //     }
-            // }
-            // isVideoEmpty();
             let mostLikes = 0;
             let likedVideo = null;
             for(let i = 0; i < userVideos.videos.length; i++) {
@@ -71,7 +64,7 @@ module.exports = {
             req.session.userId = createdUser._id;
             req.session.username = createdUser.name;
             req.session.logged = true;
-             res.redirect('/user/' + createdUser._id);
+             res.redirect(`/user/${createdUser._id}`);
 
         } catch(err) {
             console.log(err)
@@ -90,7 +83,7 @@ module.exports = {
     editUser: async (req, res) => {
         try{
             const foundUser = await User.findByIdAndUpdate(req.params.id, req.body);
-            res.redirect('/user/' + foundUser._id)
+            res.redirect(`/user/${foundUser._id}`)
         }catch(err){
             res.send(err)
         }

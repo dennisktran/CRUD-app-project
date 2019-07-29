@@ -7,7 +7,10 @@
 </head>
 <body>
     <header>
-        <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
+        <div class="home-btn-div">
+            <button class="home-btn"><a href="/"<i class="fas fa-home hamburger"></a></i></button>
+            <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
+        </div>
         <div class="modal modal-account">
           <div class="modal-content">
                 <div class="modal-header">
@@ -39,9 +42,9 @@
                     <%if (likedVideo) {%> 
                     <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
                     <div class="info-div">
-                        <span>Title: <%=likedVideo.title%></span>
-                        <span><i class="fas fa-thumbs-up">:<%=likedVideo.likes%></i></span>
-                        <span><i class="fas fa-thumbs-down">:<%=likedVideo.dislikes%></i></span>
+                        <span><%=likedVideo.title%></span>
+                        <span><i class="fas fa-thumbs-up">:<%=likedVideo.likes.length%></i></span>
+                        <span><i class="fas fa-thumbs-down">:<%=likedVideo.dislikes.length%></i></span>
                     </div>
                     <div>
                         <ul>

@@ -8,8 +8,27 @@
   </head>
   <body>
     <header>
-    <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
+        <div class="home-btn-div">
+          <button class="home-btn"><a href="/"<i class="fas fa-home hamburger"></a></i></button>
+          <%if(logged) {%>
+          <button class="ham-btn logged"><i class="fas fa-bars hamburger"></i></button>
+          <%}%>
+          <%if(!logged) {%>
+          <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
+          <%}%>
+        </div>
       <nav>
+      <%if(logged) {%>
+        <div class="modal modal-logged-in">
+          <div class="modal-content">
+            <div class="modal-body">
+              <a href="/user/logout" class="log-out">Logout</a>
+              <h2><a href="/user/<%=userID%>">Account</a></h2>
+            </div>
+          </div>
+        </div>
+      <%}%>
+      <%if(!logged) {%>
         <div class="modal modal-login">
           <div class="modal-content">
               <div class="modal-header">
@@ -21,26 +40,27 @@
                       <input type="password" name="password" placeholder="password">
                       <button class="log-in-modal btn">Log In</button>
                   </form>
-                   <button class="sign-up-btn btn">sign up</button>
-        <div class="modal modal-signup">
-          <div class="modal-content">
-              <div class="modal-header">
-              <h1>Sign Up</h1>
-              </div>
-              <div class="modal-body">
-                  <form action="/user/signup" method="POST" class="form">
+                  <button class="sign-up-btn btn">sign up</button>
+              <div class="modal modal-signup">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1>Sign Up</h1>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/user/signup" method="POST" class="form">
                       <input type="text" name="name" placeholder="name">
                       <input type="email" name="email" placeholder="email">
                       <input type="password" name="password" placeholder="password">
                       <input type="password" name="passwordcheck" placeholder="password check">
                       <button class="sign-up-modal btn">Sign Up</button>
-                  </form>
+                    </form>
+                  </div>
+                </div>
               </div>
+            </div>
           </div>
         </div>
-              </div>
-          </div>
-      </div>
+        <%}%>
       </nav>
     <h1>FORTNITE MANIA </h1>
     </header>
@@ -51,19 +71,21 @@
       <section>
         <article>
             <div class="popular-div">
-                <h1>Top Vid</h1>
             </div>
             <div class="popular-video">
                 <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
-                <div>
-                    <span><%=likedVideo.title%></span>
-                    <span><%=likedVideo.likes%></span>
-                    <span><%=likedVideo.dislikes%></span>
+                <div class="info-div">
+                  <span><%=likedVideo.title%></span>
+                  <%if(!logged) {%>
+                  <span class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></span>
+                  <span class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></span>
+                  <%}%>
+                  <%if(logged) {%>
+                  <button class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></button>
+                  <button class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></button>
+                  <%}%>
                 </div>
-            </div
-          <span>Info:</span>
-          <span><i class="fas fa-thumbs-up"></i></span>
-          <span><i class="fas fa-thumbs-down"></i></span>
+            </div>
           </div>
         </article>
       </section>
