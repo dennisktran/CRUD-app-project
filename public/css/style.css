@@ -44,6 +44,10 @@ a {
     text-decoration: none;
 }
 
+input {
+    color: gray;
+}
+
 /*  MODAL */
 
 .modal {
@@ -110,6 +114,7 @@ a {
 
 .btn {
     background: #673ab7;
+    color: black
 }
 
 .hamburger {
@@ -136,7 +141,6 @@ a {
 input, .btn {
     text-align: center;
     width: 80%;
-    color: black;
     font-weight: bold;
     letter-spacing: 3px;
     border-radius: 5px;
