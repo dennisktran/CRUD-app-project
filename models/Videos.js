@@ -13,3 +13,6 @@ const videoSchema = new mongoose.Schema({
 const Video = mongoose.model('Video', videoSchema);
 
 module.exports = Video;
+
+//req.body.url splice watch?v, join embed
+//do it in create route
