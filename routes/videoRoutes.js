@@ -10,9 +10,9 @@ const isLogged = (req, res, next) =>{
     }
 }
 
-router.get('/:id', videoController.show);
 router.post('/:id',isLogged, videoController.createVideo);
 router.delete('/:id',isLogged, videoController.delete)
+router.get('/:id', videoController.show);
 router.put('/:id/like', isLogged, videoController.updateLike);
 router.put('/:id/dislike', isLogged, videoController.updateDislike);
 module.exports = router;

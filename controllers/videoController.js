@@ -3,8 +3,9 @@ const User = require('../models/User');
 
 module.exports = {
   show: async (req, res) => {
-
+    res.render('videos/show.ejs')
   },
+  
   createVideo: async (req, res) => {
     try{
         const createVideo = await Video.create(req.body);
