@@ -239,25 +239,19 @@ main {
     justify-content: space-evenly;
 }
 
-/* .horizontal-scroll {
-    display: flex;
-    justify-content: center;
-} */
-
 div.scrollmenu {
-    overflow: scroll;
-    display: inline-block;
-    justify-content: space-evenly;
+    overflow-x: scroll;
+    display: flex;
 }
 
-ul.scrollmenu a {
+div.scrollmenu a {
   text-align: center;
   text-decoration: none;
   letter-spacing: 2px;
   font-size: 20px;
 }
 
-ul.scrollmenu a:hover {
+div.scrollmenu a:hover {
   background-color: #777;
 }
 
@@ -266,7 +260,7 @@ ul.scrollmenu a:hover {
 }
 
 div.video-player {
-
+    margin-right: 25px;
 }
 
 .title-div {
