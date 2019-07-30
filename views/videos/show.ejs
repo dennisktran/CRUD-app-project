@@ -22,6 +22,20 @@
       </div>
     </header>
     <main>
+      <article>
+        <div>
+          <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
+          <div class="info-div">  
+            <span><%=likedVideo.title%></span>
+            <span><i class="fas fa-thumbs-up">:<%=likedVideo.likes.length%></i></span>
+            <span><i class="fas fa-thumbs-down">:<%=likedVideo.dislikes.length%></i></span>
+          </div>
+        </div>
+        <div class="show-comments">
+        </div>
+      </article>
+      <aside>
+      </aside>
     </main>
     <footer>
     </footer>

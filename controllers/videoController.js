@@ -3,7 +3,13 @@ const User = require('../models/User');
 
 module.exports = {
   show: async (req, res) => {
-
+    try{
+      const video = await Video.findById(req.params.id);
+      res.render('/video/show.ejs', {
+        video: video
+      });
+  } catch(err) {
+  }
   },
   createVideo: async (req, res) => {
     try{
