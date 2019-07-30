@@ -148,7 +148,7 @@ input, .btn {
 
 input:hover, .btn:hover {
     box-shadow: 0 0 5px #2196F3;
-} 
+}
 
 .upload-btn {
     width: 23%;
@@ -230,6 +230,29 @@ main {
 .vid-info-home {
     display: flex;
     justify-content: space-evenly;
+}
+
+div.scrollmenu {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  display: flex
+}
+
+div.scrollmenu a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+}
+
+div.scrollmenu a:hover {
+  background-color: #777;
+}
+
+div.video-player {
+  margin-right: 25px;
 }
 
 /*  KEY FRAMES  */

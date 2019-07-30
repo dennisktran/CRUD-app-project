@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Projecy</title>
+    <title>FORTNITE MANIA</title>
     <script src="https://kit.fontawesome.com/5af6d749d4.js"></script>
     <link rel="stylesheet" href="/css/style.css">
   </head>
@@ -83,9 +83,17 @@
             </div>
           </div>
         </article>
-      </section>
-      <section>
-        <!--horizontal video viewer-->
+        <article class="horizontal-scroll">
+          <div class="scrollmenu">
+            <%for(let i = 0; i < videos.length; i++) {%>
+              <div>
+                <div class="video-player"><iframe src="https://youtube.com/embed/<%=videos[i].url%>"></iframe></div>
+                <div><a href="/videos/show.ejs"><%= videos[i].title %></a></div>
+              </div>
+            <%}%>
+          </div>
+
+        </article>
       </section>
     </main>
     <script src="js/app.js"></script>

@@ -39,7 +39,8 @@ app.get('/', async (req, res) => {
     res.render('index.ejs', {
       logged: req.session.logged,
       likedVideo: likedVideo,
-      userID: req.session.userId
+      userID: req.session.userId,
+      videos: displayVids
     });
     console.log(displayVids);
   } catch(err){
