@@ -90,13 +90,12 @@
         <article class="horizontal-scroll">
           <div class="scrollmenu">
             <%for(let i = 0; i < videos.length; i++) {%>
-              <div class = "vid-container">
+              <div class="vid-container">
                 <div class="video-player"><iframe src="https://youtube.com/embed/<%=videos[i].url%>"></iframe></div>
-                <div><a href="/videos/show.ejs"><%= videos[i].title %></a></div>
+                <div class="title-div"><a href="/videos/show.ejs"><%= videos[i].title %></a></div>
               </div>
             <%}%>
           </div>
-
         </article>
       </section>
     </main>

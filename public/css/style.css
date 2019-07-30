@@ -44,6 +44,10 @@ a {
     text-decoration: none;
 }
 
+input {
+    color: gray;
+}
+
 /*  MODAL */
 
 .modal {
@@ -110,6 +114,7 @@ a {
 
 .btn {
     background: #673ab7;
+    color: black
 }
 
 .hamburger {
@@ -136,7 +141,6 @@ a {
 input, .btn {
     text-align: center;
     width: 80%;
-    color: black;
     font-weight: bold;
     letter-spacing: 3px;
     border-radius: 5px;
@@ -226,6 +230,9 @@ main {
     justify-content: center;
     margin-top: 5px;
 }
+.info-div span:nth-child(1) {
+    align-self: center;
+}
 
 .vid-info-home {
     display: flex;
@@ -233,17 +240,15 @@ main {
 }
 
 div.scrollmenu {
-  background-color: #333;
-  overflow-x: scroll;
-  display: flex
+    overflow-x: scroll;
+    display: flex;
 }
 
 div.scrollmenu a {
-  display: inline-block;
-  color: white;
   text-align: center;
-  padding: 10px;
   text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 20px;
 }
 
 div.scrollmenu a:hover {
@@ -255,7 +260,11 @@ div.scrollmenu a:hover {
 }
 
 div.video-player {
-  margin-right: 25px;
+    margin-right: 25px;
+}
+
+.title-div {
+    text-align: center;
 }
 
 /*  KEY FRAMES  */
