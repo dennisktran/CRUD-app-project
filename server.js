@@ -48,6 +48,14 @@ app.get('/', async (req, res) => {
   }
 });
 
+app.put('/like', async (req, res) => {
+  try{
+    
+  }catch(err) {
+    res.send(err);
+  }
+})
+
 app.listen(3000, () => {
   console.log('listening..... on port 3000');
 });

@@ -17,7 +17,6 @@ module.exports = {
         res.send(err);
     }
   },
-
   delete: async (req, res) => {
     try{
       const deleteVideo = await Video.findByIdAndRemove(req.params.id);
@@ -29,7 +28,42 @@ module.exports = {
     } catch(err) {
       console.log(err, 'this is the error')
     }
-  
+  },
+  updateLike: async (req, res) => {
+    try{
+      const videoLike = await Video.findById(req.params.id);
+      if(!videoLike.likes.includes(req.session.userId)) {
+        videoLike.likes.push(req.session.userId);
+      };
+      if(videoLike.dislikes.includes(req.session.userId)) {
+        videoLike.dislikes.splice(videoLike.dislikes.indexOf(req.session.userId), 1);
+      };
+      videoLike.save();
+      console.log(videoLike.likes,'<----- likes');
+      console.log(videoLike.dislikes,'<----- dislikes');
+      console.log(req.session.userId, '<---- the user');
+      res.redirect('/');
+    }catch(err) {
+      res.send(err);
+    }
+  },
+  updateDislike: async (req, res) => {
+    try{
+      const videoLike = await Video.findById(req.params.id);
+      if(!videoLike.dislikes.includes(req.session.userId)) {
+        videoLike.dislikes.push(req.session.userId);
+      };
+      if(videoLike.likes.includes(req.session.userId)) {
+        videoLike.likes.splice(videoLike.likes.indexOf(req.session.userId), 1);
+      };
+      videoLike.save();
+      console.log(videoLike.likes,'<----- likes');
+      console.log(videoLike.dislikes,'<----- dislikes');
+      console.log(req.session.userId, '<---- the user');
+      res.redirect('/');
+    }catch(err) {
+      res.send(err);
+    }
   }
 }
 
