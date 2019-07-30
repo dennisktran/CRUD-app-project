@@ -7,6 +7,7 @@
     margin: 0px;
     padding: 0px;
     font-family: fortnite;
+    color: #03A9F4;
 }
 
 header {
@@ -26,6 +27,7 @@ header h1 {
     text-align: center;
     position: relative;
     font-size: 3em;
+    color: white;
 }
 
 iframe {
@@ -83,6 +85,11 @@ a {
 
 .modal-header h1 {
     text-align: center;
+    color: #03A9F4;
+}
+
+.modal-header a {
+    color: #673ab7;
 }
 
 /*   form     */
@@ -101,13 +108,17 @@ a {
 
 /*  Button Input  */
 
+.btn {
+    background: #673ab7;
+}
+
 .hamburger {
     background: #03a9f4;
     color: white;
     font-size: 24px;
 }
 
-.ham-btn, .home-btn {
+.ham-btn, .home-btn, .logged-btn {
     border: 0px;
     background: none;
     padding: 5px;
