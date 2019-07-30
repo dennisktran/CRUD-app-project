@@ -245,9 +245,15 @@ main {
 } */
 
 div.scrollmenu {
+<<<<<<< HEAD
     overflow: scroll;
     display: inline-block;
     justify-content: space-evenly;
+=======
+  background-color: #333;
+  overflow-x: scroll;
+  display: flex
+>>>>>>> 7a97aa194e8c28ea6aa38c9487472133f1b782ce
 }
 
 .vid-div-scroll {
@@ -263,6 +269,10 @@ ul.scrollmenu a {
 
 ul.scrollmenu a:hover {
   background-color: #777;
+}
+
+.vid-container{
+  flex: 0 0 auto;;
 }
 
 div.video-player {
