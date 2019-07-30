@@ -20,26 +20,52 @@
           </div>
         </div>
       </div>
+      <h1>FORTNITE MANIA</h1>
     </header>
     <main>
-      <article>
+      <div class="filter-div">
+        <input type="text" name="search" placeholder="search for video">
+      </div>
+      <article class="show-art">
         <div>
-          <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
-          <div class="info-div">  
-            <span><%=likedVideo.title%></span>
-            <span><i class="fas fa-thumbs-up">:<%=likedVideo.likes.length%></i></span>
-            <span><i class="fas fa-thumbs-down">:<%=likedVideo.dislikes.length%></i></span>
+          <h1><%=video.title%></h1>
+          <iframe src="https://youtube.com/embed/<%=video.url%>"></iframe>
+          <div class="info-div"> 
+            <span><%=video.user%></i></span>
+            <span><i class="fas fa-thumbs-up">:<%=video.likes.length%></i></span>
+            <span><i class="fas fa-thumbs-down">:<%=video.dislikes.length%></i></span>
           </div>
         </div>
         <div class="show-comments">
+            <form action="/video/<%=video._id%>/comments?_method=PUT" method="POST">
+              <textarea type="text" max="150">
+              </textarea>
+              <div class="comment-btn-div">
+                <button>Add comment</button>
+              </div>
+            </form>
+            <button class="cancel-btn">Cancel</button>
+            <ul>
+              <%for(let i = 0; i < video.comments.length; i++) {%>
+                <li><%=video.comments[i]%></li>
+              <%}%>
+            </ul>
         </div>
       </article>
-      <aside>
+      <aside class="vertical-scroll">
+       <div class="scrollmenu">
+            <%for(let i = 0; i < videos.length; i++) {%>
+              <div class="vid-container">
+                <div class="video-player"><iframe src="https://youtube.com/embed/<%=videos[i].url%>"></iframe></div>
+                <div class="title-div"><a href="/video/<%=videos[i]._id%>"><%= videos[i].title %></a></div>
+              </div>
+            <%}%>
+          </div>
       </aside>
     </main>
     <footer>
     </footer>
-    <script src="js/videoShow.js"></script>
+    <script src="/js/videoShow.js"></script>
   </body>
 </html>
 
