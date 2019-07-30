@@ -10,16 +10,11 @@
     <header>
         <div class="home-btn-div">
           <button class="home-btn"><a href="/"<i class="fas fa-home hamburger"></a></i></button>
-          <%if(logged) {%>
-          <button class="ham-btn logged"><i class="fas fa-bars hamburger"></i></button>
-          <%}%>
-          <%if(!logged) {%>
           <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
-          <%}%>
         </div>
       <nav>
       <%if(logged) {%>
-        <div class="modal modal-logged-in">
+        <div class="modal modal-login">
           <div class="modal-content">
             <div class="modal-body">
               <a href="/user/logout" class="log-out">Logout</a>
