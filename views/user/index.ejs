@@ -39,7 +39,7 @@
         <section>
             <article class="center-art">
                 <div class="user-vid">
-                    <%if (likedVideo) {%> 
+                    <%if (likedVideo) {%>
                     <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
                     <div class="info-div">
                         <span><%=likedVideo.title%></span>
@@ -51,7 +51,7 @@
                             <%for(let i = 0; i < likedVideo.comments; i ++){%>
                                 <li><%=likedVideo[i].comments%></li>
                             <%}%>
-                        </ul>    
+                        </ul>
                     </div>
                     <%}%>
                 </div>
@@ -65,8 +65,8 @@
                             <form action="/video/<%=userVideos.videos[i]._id%>?_method=DELETE" method="POST">
                                 <button class="">Delete</button>
                             </form>
-                        </li> 
-                    <%}%>       
+                        </li>
+                    <%}%>
                 </ul>
                 <button class="upload-btn">Upload</button>
                 <div class="modal modal-upload">
@@ -81,7 +81,7 @@
                                 <input type="text" name="title" placeholder="title"/>
                                 <input type="text" name="info" placeholder="info"/>
                                 <input type="text" name="tags" placeholder="tags"/>
-                                <button class="submit-btn btn">UpLoad</button>
+                                <button class="submit-btn btn">Upload Video</button>
                              </form>
                         </div>
                     </div>
@@ -91,6 +91,6 @@
     </main>
     <footer>
     </footer>
-<script src="/js/userIndex.js"></script>  
+<script src="/js/userIndex.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ const User = require('../models/User');
 
 module.exports = {
   show: async (req, res) => {
-    
+
   },
   createVideo: async (req, res) => {
     try{
@@ -66,4 +66,3 @@ module.exports = {
     }
   }
 }
-
