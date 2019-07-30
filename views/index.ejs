@@ -76,8 +76,12 @@
                   <span class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></span>
                   <%}%>
                   <%if(logged) {%>
+                  <form action="/video/<%=likedVideo._id%>/like?_method=PUT" method="POST">
                   <button class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></button>
+                  </form>
+                  <form action="/video/<%=likedVideo._id%>/dislike?_method=PUT" method="POST">
                   <button class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></button>
+                  </form>
                   <%}%>
                 </div>
             </div>
