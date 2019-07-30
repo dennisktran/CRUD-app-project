@@ -230,33 +230,47 @@ main {
     justify-content: center;
     margin-top: 5px;
 }
+.info-div span:nth-child(1) {
+    align-self: center;
+}
 
 .vid-info-home {
     display: flex;
     justify-content: space-evenly;
 }
 
+/* .horizontal-scroll {
+    display: flex;
+    justify-content: center;
+} */
+
 div.scrollmenu {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
-  display: flex
+    overflow: scroll;
+    display: inline-block;
+    justify-content: space-evenly;
 }
 
-div.scrollmenu a {
-  display: inline-block;
-  color: white;
+.vid-div-scroll {
+
+}
+
+ul.scrollmenu a {
   text-align: center;
-  padding: 10px;
   text-decoration: none;
+  letter-spacing: 2px;
+  font-size: 20px;
 }
 
-div.scrollmenu a:hover {
+ul.scrollmenu a:hover {
   background-color: #777;
 }
 
 div.video-player {
-  margin-right: 25px;
+
+}
+
+.title-div {
+    text-align: center;
 }
 
 /*  KEY FRAMES  */
