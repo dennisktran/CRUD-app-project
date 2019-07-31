@@ -43,7 +43,7 @@ module.exports = {
                 mostLikes = userVideos.videos[i].likes;
                 likedVideo = userVideos.videos[i];
             }
-            res.render('/user/index.ejs', {
+            res.render('user/index.ejs', {
                 user: foundUser,
                 userVideos: userVideos,
                 likedVideo: likedVideo

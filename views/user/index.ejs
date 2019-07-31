@@ -8,8 +8,8 @@
 <body>
     <header>
         <div class="home-btn-div">
-            <button class="home-btn"><a href="/"<i class="fas fa-home hamburger"></a></i></button>
-            <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
+            <button class="home-btn"><a href="/"<i class="fas fa-home icon-btn"></a></i></button>
+            <button class="ham-btn"><i class="fas fa-bars icon-btn"></i></button>
         </div>
         <div class="modal modal-account">
           <div class="modal-content">
@@ -18,7 +18,7 @@
                     <h1>Account</h1>
                 </div>
                 <div class="modal-body modal-account">
-                    <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-form form">
+                    <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-user form">
                         <input type="text" name="name" value="<%=user.name%>"/><br/>
                         <input type="email" name="email" value="<%=user.email%>"/><br/>
                         <input type="password" name="password" placeholder="password"/><br/>
@@ -40,11 +40,11 @@
             <article class="center-art">
                 <div class="user-vid">
                     <%if (likedVideo) {%>
-                    <iframe src="https://youtube.com/embed/<%=likedVideo.url%>"></iframe>
+                    <iframe src="https://youtube.com/embed/<%=likedVideo.url%>" class="main-vid"></iframe>
                     <div class="info-div">
                         <span><%=likedVideo.title%></span>
-                        <span><i class="fas fa-thumbs-up">:<%=likedVideo.likes.length%></i></span>
-                        <span><i class="fas fa-thumbs-down">:<%=likedVideo.dislikes.length%></i></span>
+                        <span><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></span>
+                        <span><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></span>
                     </div>
                     <div>
                         <ul>
@@ -57,17 +57,6 @@
                 </div>
             </article>
             <article>
-                <h1><%=user.name%> video list</h1>
-                <ul>
-                    <%for(let i = 0; i < userVideos.videos.length; i++) {%>
-                        <li class="user-vid-list">
-                            <h1><%=userVideos.videos[i].title%></h1>
-                            <form action="/video/<%=userVideos.videos[i]._id%>?_method=DELETE" method="POST">
-                                <button class="">Delete</button>
-                            </form>
-                        </li>
-                    <%}%>
-                </ul>
                 <button class="upload-btn">Upload</button>
                 <div class="modal modal-upload">
                     <div class="modal-content">
@@ -79,17 +68,48 @@
                                 <input type="text" name="user" value="<%=user.name%>" class="upload-creator"/>
                                 <input type="text" name="url" placeholder="url"/>
                                 <input type="text" name="title" placeholder="title"/>
-                                <input type="text" name="info" placeholder="info"/>
                                 <input type="text" name="tags" placeholder="tags"/>
                                 <button class="submit-btn btn">Upload Video</button>
                              </form>
                         </div>
                     </div>
                 </div>
+                <h1><%=user.name%> video list</h1>
+                <ul>
+                    <%for(let i = 0; i < userVideos.videos.length; i++) {%>
+                        <li class="user-vid-list">
+                            <h1><%=userVideos.videos[i].title%></h1>
+                            <form action="/video/<%=userVideos.videos[i]._id%>?_method=DELETE" method="POST">
+                                <button>Delete</button>
+                            </form>
+                            <button class="edit-vid-btn">Edit</button>
+                            <div class="modal modal-edit-vid">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1>Edit</h1>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="/video/<%=userVideos.videos[i]._id%>?_method=PUT" method="POST" class="form">
+                                        <input type="text" name="title" value="<%=userVideos.videos[i].title%>"/>
+                                        <input type="text" name="tags" value="<%=userVideos.videos[i].tags%>"/>
+                                        <button>Update</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div> 
+                        </li>
+                    <%}%>
+                </ul>
             </article>
         </section>
     </main>
     <footer>
+      <div class="socialmedia">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-reddit-square"></i>
+      </div>
     </footer>
 <script src="/js/userIndex.js"></script>
 </body>
