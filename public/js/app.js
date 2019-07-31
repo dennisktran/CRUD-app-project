@@ -27,11 +27,18 @@ passcheck.addEventListener('keyup', function() {
   const password = document.querySelector('.password').value
   const passwordCheck = document.querySelector('.passwordcheck').value
   const mismatch = document.querySelector('.mismatch')
-  const click = document.querySelector("sign-up-modal btn")
+  const click = document.querySelector(".sign-up-modal-btn")
+  console.log(click)
   if (password === passwordCheck) {
     mismatch.innerText = ''
+    console.log("changing attribute")
+    click.setAttribute("type", "submit")
+    // click.removeAttribute("disabled")
     click.disabled = false
-  } else
+    console.log(click.attributes,"<===== after  changing")
+  } else {
     mismatch.innerText = "Passwords don't match. Please re-enter"
+    click.setAttribute("type", "button")
     click.disabled = true
+  }
 });
