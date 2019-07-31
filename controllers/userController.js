@@ -39,17 +39,17 @@ module.exports = {
             let mostLikes = 0;
             let likedVideo = null;
             for(let i = 0; i < userVideos.videos.length; i++) {
-                if(userVideos.videos[i].likes > mostLikes) 
+                if(userVideos.videos[i].likes > mostLikes)
                 mostLikes = userVideos.videos[i].likes;
                 likedVideo = userVideos.videos[i];
             }
-            res.render('/user/index.ejs', {
+            res.render('user/index.ejs', {
                 user: foundUser,
                 userVideos: userVideos,
                 likedVideo: likedVideo
             });
             console.log(userVideos)
-            
+
         } catch(err) {
             console.log(err)
             res.send(err);

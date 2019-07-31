@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>fortnite</title>
+    <title><%=video.title%></title>
     <script src="https://kit.fontawesome.com/5af6d749d4.js"></script>
     <link rel="stylesheet" href="/css/style.css">
   </head>
@@ -11,7 +11,7 @@
       <div class="home-btn-div">
         <button class="home-btn"><a href="/"<i class="fas fa-home hamburger"></a></i></button>
         <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
-      </div>  
+      </div>
       <div class="modal modal-login">
         <div class="modal-content">
           <div class="modal-body">
@@ -30,7 +30,7 @@
         <div>
           <h1><%=video.title%></h1>
           <iframe src="https://youtube.com/embed/<%=video.url%>"></iframe>
-          <div class="info-div"> 
+          <div class="info-div">
             <span><%=video.user%></i></span>
             <span><i class="fas fa-thumbs-up">:<%=video.likes.length%></i></span>
             <span><i class="fas fa-thumbs-down">:<%=video.dislikes.length%></i></span>
@@ -68,4 +68,3 @@
     <script src="/js/videoShow.js"></script>
   </body>
 </html>
-
