@@ -62,7 +62,9 @@
     </header>
     <main>
       <div class="filter-div">
-        <input type="text" name="search" placeholder="search for video">
+        <input class="search" type="text" name="search" placeholder="Search">
+        <ul class="autocomplete">
+        </ul>
       </div>
       <section>
         <article>
@@ -91,9 +93,8 @@
               <div class="vid-container">
                 <div class="vid-player"><iframe src="https://youtube.com/embed/<%=videos[i].url%>" class="side-vid"></iframe></div>
                 <div class="title-div">
-                    <h2><a href="/video/<%=videos[i]._id%>"><%= videos[i].title %></a></h2>
-                    <h2><%=videos[i].user%></h2>
-
+                    <h2><a href="/video/<%=videos[i]._id%>" class="title"><%= videos[i].title %></a></h2>
+                    <h2 class ="user-name"><%=videos[i].user%></h2>
                 </div>
               </div>
             <%}%>
