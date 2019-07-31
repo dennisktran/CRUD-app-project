@@ -3,7 +3,13 @@ const User = require('../models/User');
 
 module.exports = {
   show: async (req, res) => {
-    res.render('videos/show.ejs')
+    const video = await Video.findById(req.params.id);
+    const videos = await Video.find({});
+    res.render('videos/show.ejs', {
+      userID: req.session.userId,
+      video: video,
+      videos: videos
+    })
   },
   
   createVideo: async (req, res) => {
@@ -64,6 +70,16 @@ module.exports = {
       res.redirect('/');
     }catch(err) {
       res.send(err);
+    }
+  },
+  comments: async (req, res) => {
+    try{
+      const video = await Video.findById(req.params.id);
+      video.comments.push(req.body);
+      video.save();
+      res.redirect(`/video/${req.params.id}`);
+    }catch(err){
+      res.send(err)
     }
   }
 }

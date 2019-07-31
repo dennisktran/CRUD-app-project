@@ -1,10 +1,12 @@
 // btn
 const signUpBtn = document.querySelector('.sign-up-btn');
 const mainBtn = document.querySelector('.ham-btn');
+const displayCommentBtn = document.querySelector('.display-comment-btn');
 
 // modal
 const modalSignUp = document.querySelector('.modal-signup');
 const modalLogIn = document.querySelector('.modal-login');
+const modalForm = document.querySelector('.comment-form')
 
 // event listeners
 window.addEventListener('click', function(e) {
@@ -18,6 +20,9 @@ mainBtn.addEventListener('click', function() {
     modalLogIn.style.display = 'block';
 });
 
-signUpBtn.addEventListener('click', function() {
-    modalSignUp.style.display = 'block';
-});
+displayCommentBtn.addEventListener('click', function() {
+    displayCommentBtn.style.display = 'none';
+    modalForm.style.display = 'block';
+})
+
+

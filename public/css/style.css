@@ -267,6 +267,50 @@ div.video-player {
     text-align: center;
 }
 
+/*    show     */
+
+.show-art h1 {
+    text-align: center;
+    font-size: 36px;
+    letter-spacing: 2px;
+}
+
+.comment-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.show-comments {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    border: 0;
+    border-bottom: 2px solid #2196F3;
+    font-size: 20px;
+}
+
+.comment-btn-div {
+    text-align: right;
+}
+
+.comment-btn-div button {
+    width: 80px;
+    height: 21px;
+    margin: 2px;
+}
+
+.cancel-btn {
+    width: 81px;
+    height: 21px;
+    align-self: flex-end;
+    position: relative;
+    right: 87px;
+    bottom: 23px;
+}
+
 /*  KEY FRAMES  */
 
 @keyframes modalOpen {
