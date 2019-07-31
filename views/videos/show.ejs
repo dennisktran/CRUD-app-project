@@ -9,17 +9,54 @@
   <body>
     <header>
       <div class="home-btn-div">
-        <button class="home-btn"><a href="/"<i class="fas fa-home hamburger"></a></i></button>
-        <button class="ham-btn"><i class="fas fa-bars hamburger"></i></button>
-      </div>
-      <div class="modal modal-login">
-        <div class="modal-content">
-          <div class="modal-body">
-            <a href="/user/logout" class="log-out">Logout</a>
-            <h2><a href="/user/<%=userID%>">Account</a></h2>
+        <button class="home-btn"><a href="/"<i class="fas fa-home icon-btn"></a></i></button>
+        <button class="ham-btn"><i class="fas fa-bars icon-btn"></i></button>
+      </div>  
+      <nav>
+      <%if(logged) {%>
+        <div class="modal modal-login">
+          <div class="modal-content">
+            <div class="modal-body">
+              <a href="/user/logout" class="log-out">Logout</a>
+              <h2><a href="/user/<%=userID%>">Account</a></h2>
+            </div>
           </div>
         </div>
-      </div>
+      <%}%>
+      <%if(!logged) {%>
+        <div class="modal modal-login">
+          <div class="modal-content">
+              <div class="modal-header">
+              <h1>Log In</h1>
+              </div>
+              <div class="modal-body">
+                  <form action="/user/login" method="POST" class="form">
+                      <input type="text" name="name" placeholder="name">
+                      <input type="password" name="password" placeholder="password">
+                      <button class="log-in-modal btn">Log In</button>
+                  </form>
+                  <button class="sign-up-btn btn">sign up</button>
+              <div class="modal modal-signup">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1>Sign Up</h1>
+                  </div>
+                  <div class="modal-body">
+                    <form action="/user/signup" method="POST" class="form">
+                      <input type="text" name="name" placeholder="name">
+                      <input type="email" name="email" placeholder="email">
+                      <input type="password" name="password" placeholder="password">
+                      <input type="password" name="passwordcheck" placeholder="password check">
+                      <button class="sign-up-modal btn">Sign Up</button>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <%}%>
+      </nav>
       <h1>FORTNITE MANIA</h1>
     </header>
     <main>
@@ -29,11 +66,20 @@
       <article class="show-art">
         <div>
           <h1><%=video.title%></h1>
-          <iframe src="https://youtube.com/embed/<%=video.url%>"></iframe>
-          <div class="info-div">
+          <iframe src="https://youtube.com/embed/<%=video.url%>" class="main-vid"></iframe>
+          <div class="info-div"> 
             <span><%=video.user%></i></span>
-            <span><i class="fas fa-thumbs-up">:<%=video.likes.length%></i></span>
-            <span><i class="fas fa-thumbs-down">:<%=video.dislikes.length%></i></span>
+            <%if(!logged) {%>
+            <span class="like-btn"><i class="fas fa-thumbs-up"><%=video.likes.length%></i></span>
+            <span class="dislike-btn"><i class="fas fa-thumbs-down"><%=video.dislikes.length%></i></span>
+            <%} else {%>
+            <form action="/video/<%=video._id%>/like?_method=PUT" method="POST">
+            <button class="like-btn"><i class="fas fa-thumbs-up"><%=video.likes.length%></i></button>
+            </form>
+            <form action="/video/<%=video._id%>/dislike?_method=PUT" method="POST">
+            <button class="dislike-btn"><i class="fas fa-thumbs-down"><%=video.dislikes.length%></i></button>
+            </form>
+            <%}%>
           </div>
         </div>
         <div class="show-comments">
@@ -52,18 +98,27 @@
             </ul>
         </div>
       </article>
-      <aside class="vertical-scroll">
+      <aside class="scroll">
        <div class="scrollmenu">
-            <%for(let i = 0; i < videos.length; i++) {%>
-              <div class="vid-container">
-                <div class="video-player"><iframe src="https://youtube.com/embed/<%=videos[i].url%>"></iframe></div>
-                <div class="title-div"><a href="/video/<%=videos[i]._id%>"><%= videos[i].title %></a></div>
+          <%for(let i = 0; i < videos.length; i++) {%>
+            <div class="vid-container">
+              <div class="vid-player"><iframe src="https://youtube.com/embed/<%=videos[i].url%>" class="side-vid"></iframe></div>
+              <div class="title-div">
+                <h2><a href="/video/<%=videos[i]._id%>"><%= videos[i].title %></a></h2>
+                <h2><%=videos[i].user%></h2>
               </div>
-            <%}%>
-          </div>
+            </div>
+          <%}%>
+        </div>
       </aside>
     </main>
     <footer>
+      <div class="socialmedia">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-reddit-square"></i>
+      </div>
     </footer>
     <script src="/js/videoShow.js"></script>
   </body>

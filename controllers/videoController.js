@@ -8,10 +8,20 @@ module.exports = {
     res.render('videos/show.ejs', {
       userID: req.session.userId,
       video: video,
-      videos: videos
+      videos: videos,
+      logged: req.session.logged
     })
   },
-  
+  // loginShow: async (req, res) => {
+  //   const video = await Video.findById(req.params.id);
+  //   const videos = await Video.find({});
+  //   res.redirect('videos/show.ejs', {
+  //     userID: req.session.userId,
+  //     video: video,
+  //     videos: videos,
+  //     logged: req.session.logged
+  //   })
+  // },
   createVideo: async (req, res) => {
     try{
         const createVideo = await Video.create(req.body);
@@ -34,6 +44,14 @@ module.exports = {
       console.log(deleteVideo, '<---- deleted video')
     } catch(err) {
       console.log(err, 'this is the error')
+    }
+  },
+  edit: async (req, res) => {
+    try{
+      const video = await Video.findByIdAndUpdate(req.params.id, req.body);
+      res.redirect(`/user/${req.session.userId}`);
+    }catch(err){
+      res.send(err);
     }
   },
   updateLike: async (req, res) => {
