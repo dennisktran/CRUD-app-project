@@ -39,7 +39,7 @@ module.exports = {
             let mostLikes = 0;
             let likedVideo = null;
             for(let i = 0; i < userVideos.videos.length; i++) {
-                if(userVideos.videos[i].likes > mostLikes) 
+                if(userVideos.videos[i].likes > mostLikes)
                 mostLikes = userVideos.videos[i].likes;
                 likedVideo = userVideos.videos[i];
             }
@@ -49,7 +49,7 @@ module.exports = {
                 likedVideo: likedVideo
             });
             console.log(userVideos)
-            
+
         } catch(err) {
             console.log(err)
             res.send(err);
