@@ -9,9 +9,8 @@
     font-family: fortnite;
     color: #03A9F4;
 }
-@media screen and (min-width: 700px) {
 
-}
+
 
 body {
     margin: 0px 50px;
@@ -70,6 +69,11 @@ body {
 
 .modal-header a {
     color: #673ab7;
+}
+
+.modal-header h6 {
+    text-align: left;
+    font-size: 1.5em;
 }
 
 /*   general     */
@@ -341,10 +345,6 @@ main {
 
 .scrollmenu a:hover {
   background-color: #777;
-}
-
-.vid-container{
-
 }
 
 .vid-player {

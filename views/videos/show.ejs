@@ -17,8 +17,10 @@
       <%if(logged) {%>
         <div class="modal modal-login">
           <div class="modal-content">
+            <div class="modal-header">
+              <h6><a href="/user/logout" class="log-out">Logout</a></h6>
+            </div>
             <div class="modal-body">
-              <a href="/user/logout" class="log-out">Logout</a>
               <h2><a href="/user/<%=userID%>">Account</a></h2>
             </div>
           </div>

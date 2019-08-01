@@ -16,7 +16,7 @@
         <div class="modal modal-account">
           <div class="modal-content">
                 <div class="modal-header">
-                    <a href="/user/logout" class="log-out">Logout</a>
+                    <h6><a href="/user/logout" class="log-out">Logout</a></h6>
                 </div>
                 <div class="modal-body modal-account">
                     <form action="/user/<%=user._id%>?_method=PUT" method="POST" class="edit-user form">
@@ -62,7 +62,7 @@
                 <ul>
                     <%for(let i = 0; i < userVideos.videos.length; i++) {%>
                         <li class="user-vid-list">
-                            <h1><%=userVideos.videos[i].title%></h1>
+                            <h1><a href="/video/<%=userVideos.videos[i]._id%>"><%=userVideos.videos[i].title%></a></h1>
                             <form action="/video/<%=userVideos.videos[i]._id%>?_method=DELETE" method="POST">
                                 <button class="">Delete</button>
                             </form>
