@@ -12,16 +12,6 @@ module.exports = {
       logged: req.session.logged
     })
   },
-  // loginShow: async (req, res) => {
-  //   const video = await Video.findById(req.params.id);
-  //   const videos = await Video.find({});
-  //   res.redirect('videos/show.ejs', {
-  //     userID: req.session.userId,
-  //     video: video,
-  //     videos: videos,
-  //     logged: req.session.logged
-  //   })
-  // },
   createVideo: async (req, res) => {
     try{
         const createVideo = await Video.create(req.body);
@@ -93,7 +83,7 @@ module.exports = {
   comments: async (req, res) => {
     try{
       const video = await Video.findById(req.params.id);
-      video.comments.push(req.body);
+      video.comments.push(req.body.comments);
       video.save();
       res.redirect(`/video/${req.params.id}`);
     }catch(err){

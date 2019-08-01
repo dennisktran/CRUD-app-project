@@ -25,9 +25,3 @@ signUpBtn.addEventListener('click', function() {
 });
 
 
-displayCommentBtn.addEventListener('click', function() {
-    displayCommentBtn.style.display = 'none';
-    modalForm.style.display = 'block';
-})
-
-

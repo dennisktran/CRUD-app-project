@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=video.title%></title>
     <script src="https://kit.fontawesome.com/5af6d749d4.js"></script>
     <link rel="stylesheet" href="/css/style.css">
@@ -84,7 +85,8 @@
         </div>
         <div class="show-comments">
             <form action="/video/<%=video._id%>/comments?_method=PUT" method="POST">
-              <textarea type="text" max="150">
+              <textarea name="comments" type="text" max="150">
+              Comment....
               </textarea>
               <div class="comment-btn-div">
                 <button>Add comment</button>

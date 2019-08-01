@@ -1,15 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
-    <title>Account</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>user index</title>
     <script src="https://kit.fontawesome.com/5af6d749d4.js"></script>
     <link rel="stylesheet" href="/css/style.css"/>
 </head>
 <body>
     <header>
         <div class="home-btn-div">
-            <button class="home-btn"><a href="/"<i class="fas fa-home icon-btn"></a></i></button>
-            <button class="ham-btn"><i class="fas fa-bars icon-btn"></i></button>
+          <button class="home-btn"><a href="/"><i class="fas fa-home home-icon"></a></i></button>
+          <button class="ham-btn"><i class="fas fa-bars icon-btn ham-icon"></i></button>
         </div>
         <div class="modal modal-account">
           <div class="modal-content">
@@ -36,7 +38,7 @@
         <h1><%=user.name%></h1>
     </header>
     <main>
-        <section>
+        <section class="user-sec">
             <article class="center-art">
                 <div class="user-vid">
                     <%if (likedVideo) {%>
@@ -57,7 +59,7 @@
                 </div>
             </article>
             <article>
-                <button class="upload-btn">Upload</button>
+                <button class="upload-btn">Upload new video</button>
                 <div class="modal modal-upload">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -103,12 +105,12 @@
             </article>
         </section>
     </main>
-    <footer>
+    <footer class="user-footer">
       <div class="socialmedia">
-        <i class="fab fa-facebook-square"></i>
-        <i class="fab fa-twitter-square"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-reddit-square"></i>
+        <a href="https://www.epicgames.com/fortnite/en-US/play-now/battle-royale?utm_source=GoogleSearch&utm_medium=Search&utm_campaign=an*Internal_pr*FNBR_ct*C_pl*SearchBrand_co*US_cr*exact&utm_id=1698686527&utm_content=buildbattlewin_playfree&utm_term=fortnite&gclid=CjwKCAjw-ITqBRB7EiwAZ1c5U271SYFKmSQ9FgA-Wbcbw-vfg8pKMqZ5Vq8cBw41IwB6o_phqZbsjRoCsRsQAvD_BwE"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.epicgames.com/fortnite/en-US/play-now/battle-royale?utm_source=GoogleSearch&utm_medium=Search&utm_campaign=an*Internal_pr*FNBR_ct*C_pl*SearchBrand_co*US_cr*exact&utm_id=1698686527&utm_content=buildbattlewin_playfree&utm_term=fortnite&gclid=CjwKCAjw-ITqBRB7EiwAZ1c5U271SYFKmSQ9FgA-Wbcbw-vfg8pKMqZ5Vq8cBw41IwB6o_phqZbsjRoCsRsQAvD_BwE"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.epicgames.com/fortnite/en-US/play-now/battle-royale?utm_source=GoogleSearch&utm_medium=Search&utm_campaign=an*Internal_pr*FNBR_ct*C_pl*SearchBrand_co*US_cr*exact&utm_id=1698686527&utm_content=buildbattlewin_playfree&utm_term=fortnite&gclid=CjwKCAjw-ITqBRB7EiwAZ1c5U271SYFKmSQ9FgA-Wbcbw-vfg8pKMqZ5Vq8cBw41IwB6o_phqZbsjRoCsRsQAvD_BwE"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.epicgames.com/fortnite/en-US/play-now/battle-royale?utm_source=GoogleSearch&utm_medium=Search&utm_campaign=an*Internal_pr*FNBR_ct*C_pl*SearchBrand_co*US_cr*exact&utm_id=1698686527&utm_content=buildbattlewin_playfree&utm_term=fortnite&gclid=CjwKCAjw-ITqBRB7EiwAZ1c5U271SYFKmSQ9FgA-Wbcbw-vfg8pKMqZ5Vq8cBw41IwB6o_phqZbsjRoCsRsQAvD_BwE"><i class="fab fa-reddit-square"></i></a>
       </div>
     </footer>
 <script src="/js/userIndex.js"></script>

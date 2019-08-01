@@ -32,17 +32,21 @@ app.get('/', async (req, res) => {
     let mostLikes = 0;
     let likedVideo = {};
     for(let i = 0; i < displayVids.length; i++) {
-        if(displayVids[i].likes > mostLikes)
-        mostLikes = displayVids[i].likes;
+        if(displayVids[i].likes.length > mostLikes)
+        mostLikes = displayVids[i].likes.length;
         likedVideo = displayVids[i];
     }
+    const user = await User.findOne({name: likedVideo.user}).populate('videos');
+    console.log(user)
     res.render('index.ejs', {
       logged: req.session.logged,
       likedVideo: likedVideo,
       userID: req.session.userId,
-      videos: displayVids
+      videos: displayVids,
+      user: user
     });
-    console.log(displayVids);
+    // console.log(user, '<------ popular user');
+    // console.log(likedVideo, '<------ popular video');
   } catch(err){
     console.log(err)
   }
