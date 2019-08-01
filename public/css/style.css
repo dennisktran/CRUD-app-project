@@ -81,7 +81,7 @@ body {
 header {
     background: #03A9F4;
     color: white;
-    height: 80px;
+    height: 108px;
     letter-spacing: 5px;
     display: flex;
     flex-direction: column;
@@ -93,8 +93,7 @@ nav {
 
 header h1 {
     text-align: center;
-    position: relative;
-    font-size: 2em;
+    font-size: 5em;
     color: white;
     position: relative;
     top: 15px;
@@ -141,18 +140,19 @@ section article {
 
 .side-vid {
     height: 100px;
-    width: -webkit-fill-available;
+    width: 200px;
 }
 
 .filter-div {
     display: flex;
     justify-content: center;
-    margin-top: 5px;
+    margin: 9px 0px;
 }
 
 .filter-div input {
     height: 21px;
     font-size: 1em;
+    box-shadow: 0px 0px 10px #03A9F4;
 }
 
 .title-div {
@@ -160,20 +160,25 @@ section article {
     text-align: center;
 }
 
-.title-div h2:nth-child(2) {
+.title-div button {
+    width: 100%;
+    height: 21px;
+    font-size: 1.2em;
+}
+
+.title-div h2 {
     font-size: .8em;
 }
 
 .info-div {
     display: flex;
     justify-content: space-evenly;
-    font-size: 1,2em;
     margin: 5px 0px;
     letter-spacing: 1px;
 }
 
 .info-div i {
-    font-size: 1em;
+    font-size: 2em;
 }
 
 footer {
@@ -192,29 +197,20 @@ footer {
     color: black
 }
 
-.icon-btn {
+.like-btn, .dislike-btn {
+    border: 0px
+}
+
+.ham-icon, .home-icon {
     background: #03a9f4;
     color: white;
-    font-size: 1em;
-}
-
-.home-icon {
-    color: white;
-}
-
-.ham-btn i {
-    font-size: 2em;
+    font-size: 4em;
 }
 
 .ham-btn, .home-btn, .logged-btn {
     border: 0px;
     background: none;
     padding: 5px;
-}
-
-.home-btn {
-    color: white;
-    font-size: 24px;
 }
 
 .edit-btn {
@@ -263,6 +259,11 @@ input:hover, .btn:hover {
 
 /*  user index  */
 
+.main-vid-user {
+    border: 0px;
+    width: 100%;
+    height: 341px;
+}
 
 .edit-user, .modal-edit-vid{
     display: none;
@@ -276,13 +277,14 @@ input:hover, .btn:hover {
 
 .user-sec article:nth-child(2) {
     width: 40%;
+    height: 398px;
 }
 
 .center-art {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 80%;
     margin-bottom: 10px;
     margin-right: 14px;
 }
@@ -300,8 +302,8 @@ input:hover, .btn:hover {
 }
 
 .user-footer {
-    position: relative
-    top 100px;
+    position: relative;
+    top: 64px;
 }
 
 /*  home index  */
@@ -321,6 +323,7 @@ main {
 
 .info-div span:nth-child(1) {
     align-self: center;
+    font-size: 1.5em;
 }
 
 .vid-info-home {
@@ -331,7 +334,7 @@ main {
 .scrollmenu {
     display: flex;
     overflow: scroll;
-    height: 175px;
+    height: 140px;
     border-bottom: 2px solid;
     border-top: 2px solid;
     padding: 10px 0px;
@@ -343,11 +346,7 @@ main {
   font-size: .6em;
 }
 
-.scrollmenu a:hover {
-  background-color: #777;
-}
-
-.vid-player {
+.vid-conatiner {
     padding-right: 13px;
 }
 
@@ -364,7 +363,7 @@ main {
 }
 
 .popular-user h1 {
-    font-size: 2em;
+    font-size: 3em;
     margin-bottom: 10px;
 }
 
