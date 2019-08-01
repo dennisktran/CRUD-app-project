@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user index</title>
     <script src="https://kit.fontawesome.com/5af6d749d4.js"></script>
     <link rel="stylesheet" href="/css/style.css"/>
@@ -67,8 +67,8 @@
                         <div class="modal-body">
                             <form action="/video/<%=user._id%>" method="POST" class="form">
                                 <input type="text" name="user" value="<%=user.name%>" class="upload-creator"/>
-                                <input type="text" name="url" placeholder="url"/>
-                                <input type="text" name="title" placeholder="title"/>
+                                <input type="text" name="url" placeholder="url" required="require"/>
+                                <input type="text" name="title" placeholder="title" required="require"/>
                                 <input type="text" name="tags" placeholder="tags"/>
                                 <button class="submit-btn btn">Upload Video</button>
                              </form>
@@ -97,8 +97,8 @@
                                             <button class="submit-btn btn">Edit Video</button>
                                         </form>
                                     </div>
-                                </div>    
-                            </div>    
+                                </div>
+                            </div>
                         </li>
                     <%}%>
                 </ul>
