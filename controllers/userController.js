@@ -39,8 +39,8 @@ module.exports = {
             let mostLikes = 0;
             let likedVideo = null;
             for(let i = 0; i < userVideos.videos.length; i++) {
-                if(userVideos.videos[i].likes > mostLikes)
-                mostLikes = userVideos.videos[i].likes;
+                if(userVideos.videos[i].likes.length > mostLikes)
+                mostLikes = userVideos.videos[i].likes.length;
                 likedVideo = userVideos.videos[i];
             }
             res.render('user/index.ejs', {
@@ -74,7 +74,6 @@ module.exports = {
     deleteUser: async (req, res) => {
         try{
             const deleteUser = await User.findByIdAndDelete(req.params.id);
-            // const deleteVideo = await Video.remove({ _id: {$in: deleteUser.videos}});
             res.redirect('/');
         } catch(err) {
             res.send(err);

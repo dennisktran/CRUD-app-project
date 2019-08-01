@@ -1,7 +1,6 @@
 // btn
 const signUpBtn = document.querySelector('.sign-up-btn');
 const mainBtn = document.querySelector('.ham-btn');
-const displayCommentBtn = document.querySelector('.display-comment-btn');
 const comment = document.querySelector('.comment-area')
 const search = document.querySelector('.search')
 
@@ -53,9 +52,4 @@ search.addEventListener('keyup', function() {
       }
     }
   }
-})
-
-displayCommentBtn.addEventListener('click', function() {
-    displayCommentBtn.style.display = 'none';
-    modalForm.style.display = 'block';
 })
