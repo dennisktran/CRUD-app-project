@@ -18,7 +18,7 @@
         <div class="modal modal-login">
           <div class="modal-content">
             <div class="modal-header">
-              <a href="/user/logout" class="log-out">Logout</a>
+              <h6><a href="/user/logout" class="log-out">Logout</a></h6>
               <h1><a href="/user/<%=userID%>">Account</a></h1>
             </div>
           </div>
@@ -68,11 +68,11 @@
         </ul>
       </div>
       <section>
-        <article>
-            <div class="popular-video">
+        <article class="popular">
+            <div class="popular-vid">
               <iframe src="<%=likedVideo.url%>" class="main-vid"></iframe>
               <div class="info-div">
-                <span><%=likedVideo.title%></span>
+                <span><a href="/video/<%=likedVideo._id%>"><%=likedVideo.title%></a></span>
                 <%if(!logged) {%>
                 <span class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></span>
                 <span class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></span>
@@ -86,15 +86,14 @@
                 <%}%>
               </div>
             </div>
-          </div>
-          <div class="popular-user">
-          <h1><%=user.name%></h1>
-          <ul>
-            <%for(let i = 0; i < user.videos.length; i ++) {%>
-                <li><a href="/video/<%=user.videos[i]._id%>"><%=user.videos[i].title%></a></li>
-            <%}%>
-          </ul>
-          </div>
+            <div class="popular-user">
+              <h1><%=user.name%></h1>
+              <ul>
+                <%for(let i = 0; i < user.videos.length; i ++) {%>
+                  <li><a href="/video/<%=user.videos[i]._id%>"><%=user.videos[i].title%></a></li>
+              <%}%>
+              </ul>
+            </div>
         </article>
         <article class="scroll">
           <div class="scrollmenu">
@@ -102,7 +101,7 @@
               <div class="vid-container">
                 <div class="vid-player"><iframe src="<%=videos[i].url%>" class="side-vid"></iframe></div>
                 <div class="title-div">
-                    <h2><a href="/video/<%=videos[i]._id%>" class="title"><%= videos[i].title %></a></h2>
+                    <a href="/video/<%=videos[i]._id%>" class="title"><button><%= videos[i].title %></button></a>
                     <h2 class ="user-name"><%=videos[i].user%></h2>
                 </div>
               </div>

@@ -10,15 +10,17 @@
   <body>
     <header>
       <div class="home-btn-div">
-        <button class="home-btn"><a href="/"<i class="fas fa-home icon-btn"></a></i></button>
-        <button class="ham-btn"><i class="fas fa-bars icon-btn"></i></button>
+          <button class="home-btn"><a href="/"><i class="fas fa-home home-icon"></a></i></button>
+          <button class="ham-btn"><i class="fas fa-bars ham-icon"></i></button>
       </div>
       <nav>
       <%if(logged) {%>
         <div class="modal modal-login">
           <div class="modal-content">
+            <div class="modal-header">
+              <h6><a href="/user/logout" class="log-out">Logout</a></h6>
+            </div>
             <div class="modal-body">
-              <a href="/user/logout" class="log-out">Logout</a>
               <h2><a href="/user/<%=userID%>">Account</a></h2>
             </div>
           </div>
