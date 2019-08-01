@@ -10,9 +10,22 @@ const editVideoBtn = document.querySelector('.edit-vid-btn');
 const modalAccount = document.querySelector('.modal-account');
 const modalUpload = document.querySelector('.modal-upload');
 const modalEditUser = document.querySelector('.edit-user');
-const modalEditVideo = document.querySelector('.modal-edit-vid')
+const modalEditVideo = document.querySelector('.modal-edit-vid');
 
 // event listeners
+
+window.addEventListener('click', function(e) {
+    if (e.target === modalAccount || e.target === modalUpload || e.target === modalEditVideo ) {
+        modalAccount.style.display = 'none';
+        modalUpload.style.display = 'none';
+        modalEditUser.style.display = 'none';
+        editBtn.style.display = 'block';
+        deleteBtn.style.display = 'block';
+        logOutBtn.style.display = 'block';
+        modalEditVideo.style.display = 'none';
+     }
+ });
+
 hamBtn.addEventListener('click', function() {
     modalAccount.style.display = 'block';
 });
@@ -31,16 +44,3 @@ editBtn.addEventListener('click', function() {
 editVideoBtn.addEventListener('click', function() {
     modalEditVideo.style.display = 'block';
 });
-
-
-window.addEventListener('click', function(e) {
-    if (e.target === modalAccount || e.target === modalUpload || e.target === modalEditVideo ) {
-        modalAccount.style.display = 'none';
-        modalUpload.style.display = 'none';
-        modalEditUser.style.display = 'none';
-        editBtn.style.display = 'block';
-        deleteBtn.style.display = 'block';
-        logOutBtn.style.display = 'block';
-        modalEditVideo.style.display = 'none';
-     }
- });

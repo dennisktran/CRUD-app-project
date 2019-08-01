@@ -130,10 +130,6 @@ section article {
     width: 100%;
 }
 
-.edit-user{
-    display: none;
-}
-
 .main-vid {
     height: 235px;
     width: 100%;
@@ -262,6 +258,11 @@ input:hover, .btn:hover {
 }
 
 /*  user index  */
+
+
+.edit-user, .modal-edit-vid{
+    display: none;
+}
 
 .user-sec {
     display: flex;
