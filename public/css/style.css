@@ -278,6 +278,7 @@ input:hover, .btn:hover {
 .user-sec article:nth-child(2) {
     width: 40%;
     height: 398px;
+    overflow: scroll;
 }
 
 .center-art {
@@ -294,7 +295,7 @@ input:hover, .btn:hover {
 }
 
 .user-vid-list {
-    margin-top: 3px;
+    margin: 15px 0px;
 }
 
 .edit-form{
@@ -346,8 +347,8 @@ main {
   font-size: .6em;
 }
 
-.vid-conatiner {
-    padding-right: 13px;
+.vid-container {
+    margin-right: 13px;
 }
 
 .popular {
@@ -397,6 +398,121 @@ textarea {
     text-align: right;
 }
 
+@media screen and (max-width: 935px)  {
+
+    .popular-vid {
+        width: 76%;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    body {
+        margin: 0px;
+    }
+
+    header h1 {
+        font-size: 4em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    header {
+        height: 92px;
+    }
+
+    header h1 {
+        font-size: 3em;
+    }
+
+    .popular {
+        display: block;
+    }
+
+    .popular-vid {
+        width: 100%;
+    }
+
+    .popular-user {
+        display: none;
+    }
+
+    .info-div i {
+        font-size: 1.5em;
+    }
+
+    .user-sec {
+        flex-direction: column;
+    }
+
+    .center-art {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-right: 0px;
+    }
+
+    .user-sec article:nth-child(2) {
+        width: 100%;
+        padding-left: 7px;
+    }
+
+    .upload-btn {
+    width: 43%;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background: white;
+    height: 28px;
+    }
+
+    .user-footer {
+        position: relative;
+        top: 0px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    header {
+        height: 82px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .ham-icon, .home-icon {
+        font-size: 3em;
+    }
+
+    .socialmedia i {
+        font-size: 2em;
+    }
+
+    .scrollmenu {
+        flex-direction: column;
+    }
+
+    .vid-container {
+        display: flex;
+    }
+
+    .title-div {
+        padding-left: 11px;
+    }
+
+    .side-vid {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .side-vid {
+        width: 220px;
+    }
+}
 
 /*  KEY FRAMES  */
 

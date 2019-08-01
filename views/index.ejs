@@ -71,7 +71,7 @@
             <div class="popular-vid">
               <iframe src="<%=likedVideo.url%>" class="main-vid"></iframe>
               <div class="info-div">
-                <span><%=likedVideo.title%></span>
+                <span><a href="/video/<%=likedVideo._id%>"><%=likedVideo.title%></a></span>
                 <%if(!logged) {%>
                 <span class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></span>
                 <span class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></span>
@@ -100,7 +100,7 @@
               <div class="vid-container">
                 <div class="vid-player"><iframe src="<%=videos[i].url%>" class="side-vid"></iframe></div>
                 <div class="title-div">
-                    <button><a href="/video/<%=videos[i]._id%>" class="title"><%= videos[i].title %></a></button>
+                    <a href="/video/<%=videos[i]._id%>" class="title"><button><%= videos[i].title %></button></a>
                     <h2 class ="user-name"><%=videos[i].user%></h2>
                 </div>
               </div>
