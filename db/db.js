@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const connectionString = 'mongodb://localhost/fortnite';
+const connectionString = "mongodb://localhost/blog5" || process.env.MONGODB_URI
 
 
 mongoose.connect(connectionString, {
