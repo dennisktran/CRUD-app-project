@@ -145,8 +145,9 @@ section article {
 
 .filter-div {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     margin: 9px 0px;
+    align-items: center;
 }
 
 .filter-div input {
@@ -154,6 +155,34 @@ section article {
     font-size: 1em;
     box-shadow: 0px 0px 10px #03A9F4;
 }
+
+.autocomplete {
+    background: white;
+    text-align: center;
+    border-radius: 10px;
+    position: absolute;
+    top: 21%;
+    color: white;
+    width: 81%;
+}
+
+.autocomplete li {
+    color: #03A9F4;
+    height: 27px;
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    padding: 5px;
+}
+
+.autocomplete li:hover {
+    color: white;
+    background: #03A9F4;
+    opacity: .8;
+}
+
+
+
+
 
 .title-div {
     letter-spacing: 3px;
@@ -188,6 +217,10 @@ footer {
 .socialmedia i {
     font-size: 3em;
     margin: 5px;
+}
+
+.socialmedia i:hover {
+    transform: scale(1.5);
 }
 
 /*  Button Input  */
@@ -391,7 +424,7 @@ textarea {
     width: 100%;
     border: 0;
     border-bottom: 2px solid #2196F3;
-    font-size: 20px;
+    font-size: 1em;
 }
 
 .comment-btn-div {
@@ -411,6 +444,7 @@ textarea {
 }
 
 @media screen and (max-width: 900px) {
+    
     body {
         margin: 0px;
     }
@@ -474,6 +508,11 @@ textarea {
     .user-footer {
         position: relative;
         top: 0px;
+    }
+
+    .autocomplete {
+        position: absolute;
+        top: 19%;
     }
 }
 
