@@ -12,16 +12,6 @@ module.exports = {
       logged: req.session.logged
     })
   },
-  // loginShow: async (req, res) => {
-  //   const video = await Video.findById(req.params.id);
-  //   const videos = await Video.find({});
-  //   res.redirect('videos/show.ejs', {
-  //     userID: req.session.userId,
-  //     video: video,
-  //     videos: videos,
-  //     logged: req.session.logged
-  //   })
-  // },
   createVideo: async (req, res) => {
     try{
         req.body.url = req.body.url.split("watch?v=").join("embed/")

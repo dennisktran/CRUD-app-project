@@ -2,6 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORTNITE MANIA</title>
     <script src="https://kit.fontawesome.com/5af6d749d4.js"></script>
     <link rel="stylesheet" href="/css/style.css">
@@ -9,16 +10,16 @@
   <body>
     <header>
         <div class="home-btn-div">
-          <button class="home-btn"><a href="/"><i class="fas fa-home icon-btn"></a></i></button>
-          <button class="ham-btn"><i class="fas fa-bars icon-btn"></i></button>
+          <button class="home-btn"><a href="/"><i class="fas fa-home home-icon"></a></i></button>
+          <button class="ham-btn"><i class="fas fa-bars icon-btn ham-icon"></i></button>
         </div>
       <nav>
       <%if(logged) {%>
         <div class="modal modal-login">
           <div class="modal-content">
-            <div class="modal-body">
+            <div class="modal-header">
               <a href="/user/logout" class="log-out">Logout</a>
-              <h2><a href="/user/<%=userID%>">Account</a></h2>
+              <h1><a href="/user/<%=userID%>">Account</a></h1>
             </div>
           </div>
         </div>
@@ -35,7 +36,7 @@
                       <input type="password" name="password" placeholder="password">
                       <button class="log-in-modal btn">Log In</button>
                   </form>
-                  <button class="sign-up-btn btn">Sign up</button>
+                  <button class="sign-up-btn btn">sign up</button>
               <div class="modal modal-signup">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -45,10 +46,9 @@
                     <form action="/user/signup" method="POST" class="form">
                       <input type="text" name="name" placeholder="name">
                       <input type="email" name="email" placeholder="email">
-                      <input type="password" class="password" name="password" placeholder="password">
-                      <input type="password" class="passwordcheck" name="passwordcheck" placeholder="password check">
-                      <span class="mismatch"></span>
-                      <input type="submit" class="sign-up-modal-btn" value="Submit">
+                      <input type="password" name="password" placeholder="password">
+                      <input type="password" name="passwordcheck" placeholder="password check">
+                      <button class="sign-up-modal btn">Sign Up</button>
                     </form>
                   </div>
                 </div>
@@ -85,6 +85,14 @@
                 <%}%>
               </div>
             </div>
+          </div>
+          <div class="popular-user">
+          <h1><%=user.name%></h1>
+          <ul>
+            <%for(let i = 0; i < user.videos.length; i ++) {%>
+                <li><a href="/video/<%=user.videos[i]._id%>"><%=user.videos[i].title%></a></li>
+            <%}%>
+          </ul>
           </div>
         </article>
         <article class="scroll">
