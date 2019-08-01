@@ -61,12 +61,14 @@
     </header>
     <main>
       <div class="filter-div">
-        <input type="text" name="search" placeholder="search for video">
+        <input class="search" type="text" name="search" placeholder="Search">
+        <ul class="autocomplete">
+        </ul>
       </div>
       <article class="show-art">
         <div>
           <h1><%=video.title%></h1>
-          <iframe src="https://youtube.com/embed/<%=video.url%>" class="main-vid"></iframe>
+          <iframe src="<%=video.url%>" class="main-vid"></iframe>
           <div class="info-div">
             <span><%=video.user%></i></span>
             <%if(!logged) {%>
@@ -102,9 +104,9 @@
        <div class="scrollmenu">
           <%for(let i = 0; i < videos.length; i++) {%>
             <div class="vid-container">
-              <div class="vid-player"><iframe src="https://youtube.com/embed/<%=videos[i].url%>" class="side-vid"></iframe></div>
+              <div class="vid-player"><iframe src="<%=videos[i].url%>" class="side-vid"></iframe></div>
               <div class="title-div">
-                <h2><a href="/video/<%=videos[i]._id%>"><%= videos[i].title %></a></h2>
+                <h2><a href="/video/<%=videos[i]._id%>" class="title"><%= videos[i].title %></a></h2>
                 <h2><%=videos[i].user%></h2>
               </div>
             </div>

@@ -69,21 +69,21 @@
       <section>
         <article>
             <div class="popular-video">
-                <iframe src="https://youtube.com/embed/<%=likedVideo.url%>" class="main-vid"></iframe>
-                <div class="info-div">
-                  <span><%=likedVideo.title%></span>
-                  <%if(!logged) {%>
-                  <span class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></span>
-                  <span class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></span>
-                  <%} else {%>
-                  <form action="/video/<%=likedVideo._id%>/like?_method=PUT" method="POST">
-                  <button class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></button>
-                  </form>
-                  <form action="/video/<%=likedVideo._id%>/dislike?_method=PUT" method="POST">
-                  <button class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></button>
-                  </form>
-                  <%}%>
-                </div>
+              <iframe src="<%=likedVideo.url%>" class="main-vid"></iframe>
+              <div class="info-div">
+                <span><%=likedVideo.title%></span>
+                <%if(!logged) {%>
+                <span class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></span>
+                <span class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></span>
+                <%} else {%>
+                <form action="/video/<%=likedVideo._id%>/like?_method=PUT" method="POST">
+                <button class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></button>
+                </form>
+                <form action="/video/<%=likedVideo._id%>/dislike?_method=PUT" method="POST">
+                <button class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></button>
+                </form>
+                <%}%>
+              </div>
             </div>
           </div>
         </article>

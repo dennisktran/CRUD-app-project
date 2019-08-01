@@ -1,5 +1,3 @@
-
-
 // btn
 const signUpBtn = document.querySelector('.sign-up-btn');
 const mainBtn = document.querySelector('.ham-btn');
@@ -46,27 +44,28 @@ passcheck.addEventListener('keyup', function() {
 });
 
 
-search.addEventListener('keyup', function() {
-  const title = document.querySelectorAll('.title')
-  const autoComplete = document.querySelector(".autocomplete")
-  let input = document.querySelector('.search')
-  const filter = input.value.toUpperCase()
+  search.addEventListener('keyup', function() {
+    console.log(search)
+    const title = document.querySelectorAll('.title')
+    const autoComplete = document.querySelector(".autocomplete")
+    let input = document.querySelector('.search')
+    const filter = input.value.toUpperCase()
 
-// remove autocomplete list
-  while(autoComplete.hasChildNodes()){
-    autoComplete.removeChild(autoComplete.firstChild)
-  }
-//if input value exists, repopulate the autocomplete list
-  if(input.value){
-    for(let i = 0; i < title.length; i++){
-      if(title[i].innerText.toUpperCase().includes(filter)){
-        const list = document.createElement("li")
-        const tag = document.createElement("a")
-        tag.setAttribute("href", title[i].getAttribute("href"))
-        list.innerText = title[i].innerText
-        tag.appendChild(list)
-        autoComplete.appendChild(tag)
+  // remove autocomplete list
+    while(autoComplete.hasChildNodes()){
+      autoComplete.removeChild(autoComplete.firstChild)
+    }
+  //if input value exists, repopulate the autocomplete list
+    if(input.value){
+      for(let i = 0; i < title.length; i++){
+        if(title[i].innerText.toUpperCase().includes(filter)){
+          const list = document.createElement("li")
+          const tag = document.createElement("a")
+          tag.setAttribute("href", title[i].getAttribute("href"))
+          list.innerText = title[i].innerText
+          tag.appendChild(list)
+          autoComplete.appendChild(tag)
+        }
       }
     }
-  } 
-})
+  })

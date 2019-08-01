@@ -24,6 +24,7 @@ module.exports = {
   // },
   createVideo: async (req, res) => {
     try{
+        req.body.url = req.body.url.split("watch?v=").join("embed/")
         const createVideo = await Video.create(req.body);
         const findUser = await User.findById(req.params.id);
         findUser.videos.push(createVideo);
