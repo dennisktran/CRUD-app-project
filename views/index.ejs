@@ -62,15 +62,17 @@
     </header>
     <main>
       <div class="filter-div">
-        <input type="text" name="search" placeholder="search for video">
+        <input class="search" type="text" name="search" placeholder="Search">
+        <ul class="autocomplete">
+        </ul>
       </div>
       <section>
-        <article class="popular">
-          <div class="popular-vid">
-            <iframe src="https://youtube.com/embed/<%=likedVideo.url%>" class="main-vid"></iframe>
-            <div class="info-div">
-               <span><%=likedVideo.title%></span>
-              <%if(!logged) {%>
+        <article>
+            <div class="popular-video">
+              <iframe src="<%=likedVideo.url%>" class="main-vid"></iframe>
+              <div class="info-div">
+                <span><%=likedVideo.title%></span>
+                <%if(!logged) {%>
                 <span class="like-btn"><i class="fas fa-thumbs-up"><%=likedVideo.likes.length%></i></span>
                 <span class="dislike-btn"><i class="fas fa-thumbs-down"><%=likedVideo.dislikes.length%></i></span>
                 <%} else {%>
@@ -99,9 +101,8 @@
               <div class="vid-container">
                 <div class="vid-player"><iframe src="https://youtube.com/embed/<%=videos[i].url%>" class="side-vid"></iframe></div>
                 <div class="title-div">
-                    <h2><a href="/video/<%=videos[i]._id%>"><%= videos[i].title %></a></h2>
-                    <h2><%=videos[i].user%></h2>
-
+                    <h2><a href="/video/<%=videos[i]._id%>" class="title"><%= videos[i].title %></a></h2>
+                    <h2 class ="user-name"><%=videos[i].user%></h2>
                 </div>
               </div>
             <%}%>
@@ -111,10 +112,10 @@
     </main>
     <footer>
       <div class="socialmedia">
-        <a href="https://www.epicgames.com/fortnite/en-US/play-now/battle-royale?utm_source=GoogleSearch&utm_medium=Search&utm_campaign=an*Internal_pr*FNBR_ct*C_pl*SearchBrand_co*US_cr*exact&utm_id=1698686527&utm_content=buildbattlewin_playfree&utm_term=fortnite&gclid=CjwKCAjw-ITqBRB7EiwAZ1c5U271SYFKmSQ9FgA-Wbcbw-vfg8pKMqZ5Vq8cBw41IwB6o_phqZbsjRoCsRsQAvD_BwE"><i class="fab fa-twitter-square"></i></a>
-        <a href="https://www.epicgames.com/fortnite/en-US/play-now/battle-royale?utm_source=GoogleSearch&utm_medium=Search&utm_campaign=an*Internal_pr*FNBR_ct*C_pl*SearchBrand_co*US_cr*exact&utm_id=1698686527&utm_content=buildbattlewin_playfree&utm_term=fortnite&gclid=CjwKCAjw-ITqBRB7EiwAZ1c5U271SYFKmSQ9FgA-Wbcbw-vfg8pKMqZ5Vq8cBw41IwB6o_phqZbsjRoCsRsQAvD_BwE"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://twitter.com/epicgames"><i class="fab fa-twitter-square"></i></a>
+        <a href="https://www.facebook.com/FortniteGame/"><i class="fab fa-facebook-square"></i></a>
         <a href="https://www.epicgames.com/fortnite/en-US/play-now/battle-royale?utm_source=GoogleSearch&utm_medium=Search&utm_campaign=an*Internal_pr*FNBR_ct*C_pl*SearchBrand_co*US_cr*exact&utm_id=1698686527&utm_content=buildbattlewin_playfree&utm_term=fortnite&gclid=CjwKCAjw-ITqBRB7EiwAZ1c5U271SYFKmSQ9FgA-Wbcbw-vfg8pKMqZ5Vq8cBw41IwB6o_phqZbsjRoCsRsQAvD_BwE"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.epicgames.com/fortnite/en-US/play-now/battle-royale?utm_source=GoogleSearch&utm_medium=Search&utm_campaign=an*Internal_pr*FNBR_ct*C_pl*SearchBrand_co*US_cr*exact&utm_id=1698686527&utm_content=buildbattlewin_playfree&utm_term=fortnite&gclid=CjwKCAjw-ITqBRB7EiwAZ1c5U271SYFKmSQ9FgA-Wbcbw-vfg8pKMqZ5Vq8cBw41IwB6o_phqZbsjRoCsRsQAvD_BwE"><i class="fab fa-reddit-square"></i></a>
+        <a href="https://www.reddit.com/r/FORTnITE/"><i class="fab fa-reddit-square"></i></a>
       </div>
     </footer>
     <script src="js/app.js"></script>

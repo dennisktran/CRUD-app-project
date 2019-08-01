@@ -14,6 +14,7 @@ module.exports = {
   },
   createVideo: async (req, res) => {
     try{
+        req.body.url = req.body.url.split("watch?v=").join("embed/")
         const createVideo = await Video.create(req.body);
         const findUser = await User.findById(req.params.id);
         findUser.videos.push(createVideo);
@@ -81,13 +82,13 @@ module.exports = {
     }
   },
   comments: async (req, res) => {
-    try{
-      const video = await Video.findById(req.params.id);
-      video.comments.push(req.body.comments);
-      video.save();
-      res.redirect(`/video/${req.params.id}`);
-    }catch(err){
-      res.send(err)
-    }
+  try{
+    const video = await Video.findById(req.params.id);
+    video.comments.push(req.body.comments);
+    video.save();
+    res.redirect(`/video/${req.params.id}`);
+  }catch(err){
+    res.send(err)
   }
+}
 }
