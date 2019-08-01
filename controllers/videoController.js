@@ -91,13 +91,13 @@ module.exports = {
     }
   },
   comments: async (req, res) => {
-    try{
-      const video = await Video.findById(req.params.id);
-      video.comments.push(req.body);
-      video.save();
-      res.redirect(`/video/${req.params.id}`);
-    }catch(err){
-      res.send(err)
-    }
+  try{
+    const video = await Video.findById(req.params.id);
+    video.comments.push(req.body.comments);
+    video.save();
+    res.redirect(`/video/${req.params.id}`);
+  }catch(err){
+    res.send(err)
   }
+}
 }
