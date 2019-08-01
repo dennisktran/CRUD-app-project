@@ -402,6 +402,11 @@ textarea {
     text-align: right;
 }
 
+.socialmedia i:hover {
+   transform: scale(1.5);
+}
+
+
 @media screen and (max-width: 935px)  {
 
     .popular-vid {
@@ -512,6 +517,11 @@ textarea {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 538500b7ae1c7895239c52e207a3352c26a93ada
 /*  KEY FRAMES  */
 
 @keyframes modalOpen {

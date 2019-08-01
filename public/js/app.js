@@ -60,13 +60,13 @@ signUpBtn.addEventListener('click', function() {
     if (password === passwordCheck) {
       mismatch.innerText = ''
       console.log("changing attribute")
-      click.setAttribute("type", "submit")
+      //click.setAttribute("type", "submit")
       // click.removeAttribute("disabled")
       click.disabled = false
       console.log(click.attributes,"<===== after  changing")
     } else {
       mismatch.innerText = "Passwords don't match. Please re-enter"
-      click.setAttribute("type", "button")
+      //click.setAttribute("type", "button")
       click.disabled = true
     }
   });

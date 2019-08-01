@@ -6,6 +6,9 @@ const app            = express();
 const userRoutes =  require('./routes/userRoutes');
 const videoRoutes =  require('./routes/videoRoutes');
 
+require('dotenv').config()
+const PORT = process.env.PORT
+
 const User = require('./models/User');
 const Video = require('./models/Videos');
 
@@ -54,12 +57,12 @@ app.get('/', async (req, res) => {
 
 app.put('/like', async (req, res) => {
   try{
-    
+
   }catch(err) {
     res.send(err);
   }
 })
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('listening..... on port 3000');
 });
