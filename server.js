@@ -48,7 +48,7 @@ app.get('/', async (req, res) => {
       user: user
     });
   } catch(err){
-    res.send(err)
+      res.redirect('/');
   }
 });
 
@@ -56,7 +56,7 @@ app.put('/like', async (req, res) => {
   try{
 
   }catch(err) {
-    res.send(err);
+     res.redirect('/');
   }
 })
 
