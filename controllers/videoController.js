@@ -21,7 +21,6 @@ module.exports = {
         await findUser.save();
         res.redirect(`/user/${req.params.id}`);
     }catch(err) {
-        console.log(err)
         res.send(err);
     }
   },
@@ -32,9 +31,7 @@ module.exports = {
       foundUser.videos.remove(req.params.id);
       await foundUser.save();
       res.redirect(`/user/${foundUser._id}`);
-      console.log(deleteVideo, '<---- deleted video')
     } catch(err) {
-      console.log(err, 'this is the error')
     }
   },
   edit: async (req, res) => {
@@ -55,9 +52,6 @@ module.exports = {
         videoLike.dislikes.splice(videoLike.dislikes.indexOf(req.session.userId), 1);
       };
       videoLike.save();
-      console.log(videoLike.likes,'<----- likes');
-      console.log(videoLike.dislikes,'<----- dislikes');
-      console.log(req.session.userId, '<---- the user');
       res.redirect('/');
     }catch(err) {
       res.send(err);
@@ -73,9 +67,6 @@ module.exports = {
         videoLike.likes.splice(videoLike.likes.indexOf(req.session.userId), 1);
       };
       videoLike.save();
-      console.log(videoLike.likes,'<----- likes');
-      console.log(videoLike.dislikes,'<----- dislikes');
-      console.log(req.session.userId, '<---- the user');
       res.redirect('/');
     }catch(err) {
       res.send(err);

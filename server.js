@@ -40,7 +40,6 @@ app.get('/', async (req, res) => {
         likedVideo = displayVids[i];
     }
     const user = await User.findOne({name: likedVideo.user}).populate('videos');
-    console.log(user)
     res.render('index.ejs', {
       logged: req.session.logged,
       likedVideo: likedVideo,
@@ -49,7 +48,7 @@ app.get('/', async (req, res) => {
       user: user
     });
   } catch(err){
-    console.log(err)
+    res.send(err)
   }
 });
 

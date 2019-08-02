@@ -48,10 +48,7 @@ module.exports = {
                 userVideos: userVideos,
                 likedVideo: likedVideo
             });
-            console.log(userVideos)
-
         } catch(err) {
-            console.log(err)
             res.send(err);
         };
     },
@@ -67,7 +64,6 @@ module.exports = {
              res.redirect(`/user/${createdUser._id}`);
 
         } catch(err) {
-            console.log(err)
             res.send(err);
         }
     },
