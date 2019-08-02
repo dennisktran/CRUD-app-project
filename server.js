@@ -40,7 +40,6 @@ app.get('/', async (req, res) => {
         likedVideo = displayVids[i];
     }
     const user = await User.findOne({name: likedVideo.user}).populate('videos');
-    console.log(user)
     res.render('index.ejs', {
       logged: req.session.logged,
       likedVideo: likedVideo,
@@ -49,7 +48,11 @@ app.get('/', async (req, res) => {
       user: user
     });
   } catch(err){
+<<<<<<< HEAD
     res.redirect('/');
+=======
+      res.redirect('/');
+>>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
   }
 });
 
@@ -57,7 +60,11 @@ app.put('/like', async (req, res) => {
   try{
 
   }catch(err) {
+<<<<<<< HEAD
     res.redirect('/');
+=======
+     res.redirect('/');
+>>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
   }
 })
 

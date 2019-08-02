@@ -5,6 +5,7 @@ const editBtn = document.querySelector('.edit-btn');
 const deleteBtn = document.querySelector('.delete-btn');
 const logOutBtn = document.querySelector('.log-out');
 const editVideoBtn = document.querySelector('.edit-vid-btn');
+const comment = document.querySelector('.comment-area')
 
 //modal
 const modalAccount = document.querySelector('.modal-account');
@@ -44,3 +45,7 @@ editBtn.addEventListener('click', function() {
 editVideoBtn.addEventListener('click', function() {
     modalEditVideo.style.display = 'block';
 });
+
+comment.addEventListener('click', function() {
+  comment.textContent = '';
+})

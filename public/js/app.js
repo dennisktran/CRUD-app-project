@@ -19,14 +19,13 @@ mainBtn.addEventListener('click', function() {
     modalLogIn.style.display = 'block';
 });
 
-signUpBtn.addEventListener('click', function() {
+if(signUpBtn){
+  signUpBtn.addEventListener('click', function() {
     modalSignUp.style.display = 'block';
-});
-
-
+  });
+}
 
   search.addEventListener('keyup', function() {
-    console.log(search)
     const title = document.querySelectorAll('.title')
     const autoComplete = document.querySelector(".autocomplete")
     let input = document.querySelector('.search')
@@ -56,17 +55,12 @@ signUpBtn.addEventListener('click', function() {
     const passwordCheck = document.querySelector('.passwordcheck').value
     const mismatch = document.querySelector('.mismatch')
     const click = document.querySelector(".sign-up-modal-btn")
-    console.log(click)
     if (password === passwordCheck) {
       mismatch.innerText = ''
-      console.log("changing attribute")
-      //click.setAttribute("type", "submit")
-      // click.removeAttribute("disabled")
       click.disabled = false
-      console.log(click.attributes,"<===== after  changing")
+
     } else {
       mismatch.innerText = "Passwords don't match. Please re-enter"
-      //click.setAttribute("type", "button")
       click.disabled = true
     }
   });

@@ -48,11 +48,13 @@ module.exports = {
                 userVideos: userVideos,
                 likedVideo: likedVideo
             });
-            console.log(userVideos)
-
         } catch(err) {
+<<<<<<< HEAD
             console.log(err)
             res.redirect('/');
+=======
+            res.redirect('/')
+>>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
         };
     },
     createUser: async (req, res) => {
@@ -67,8 +69,12 @@ module.exports = {
              res.redirect(`/user/${createdUser._id}`);
 
         } catch(err) {
+<<<<<<< HEAD
             console.log(err)
             res.redirect('/');
+=======
+            res.redirect('/')            
+>>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
         }
     },
     deleteUser: async (req, res) => {
@@ -76,7 +82,7 @@ module.exports = {
             const deleteUser = await User.findByIdAndDelete(req.params.id);
             res.redirect('/');
         } catch(err) {
-            res.send(err);
+             res.redirect('/')
         }
     },
     editUser: async (req, res) => {
@@ -84,7 +90,11 @@ module.exports = {
             const foundUser = await User.findByIdAndUpdate(req.params.id, req.body);
             res.redirect(`/user/${foundUser._id}`)
         }catch(err){
+<<<<<<< HEAD
             res.redirect('/')
+=======
+            res.redirect('/')            
+>>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
         }
     }
 }

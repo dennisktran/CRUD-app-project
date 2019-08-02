@@ -21,9 +21,12 @@ mainBtn.addEventListener('click', function() {
     modalLogIn.style.display = 'block';
 });
 
-signUpBtn.addEventListener('click', function() {
+if(signUpBtn){
+  signUpBtn.addEventListener('click', function() {
     modalSignUp.style.display = 'block';
-});
+  });
+
+}
 
 comment.addEventListener('click', function() {
   comment.textContent = '';

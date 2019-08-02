@@ -38,7 +38,7 @@
                       <input type="password" name="password" placeholder="password">
                       <button class="log-in-modal btn">Log In</button>
                   </form>
-                  <button class="sign-up-btn btn">sign up</button>
+                  <button class="sign-up-btn btn">Sign up</button>
               <div class="modal modal-signup">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -109,7 +109,7 @@
             <div class="vid-container">
               <div class="vid-player"><iframe src="<%=videos[i].url%>" class="side-vid"></iframe></div>
               <div class="title-div">
-                <h2><a href="/video/<%=videos[i]._id%>" class="title"><%= videos[i].title %></a></h2>
+                   <a href="/video/<%=videos[i]._id%>" class="title"><button><%= videos[i].title %></button></a>
                 <h2><%=videos[i].user%></h2>
               </div>
             </div>
