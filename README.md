@@ -15,7 +15,7 @@ Want to give props or advice to the uploader? Go ahead and **drop a comment** be
 
 **_Create_** an account and become part of the **best** and *biggest* Battle Royale community to exist today!
 
-======================================================
+========================================================================================================================================
 #### Created By Dennis and Demarkus
 
 ##### Programs used:  
