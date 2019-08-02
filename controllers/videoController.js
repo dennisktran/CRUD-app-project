@@ -21,8 +21,7 @@ module.exports = {
         await findUser.save();
         res.redirect(`/user/${req.params.id}`);
     }catch(err) {
-        console.log(err)
-        res.send(err);
+      res.redirect('/');
     }
   },
   delete: async (req, res) => {
@@ -32,9 +31,9 @@ module.exports = {
       foundUser.videos.remove(req.params.id);
       await foundUser.save();
       res.redirect(`/user/${foundUser._id}`);
-      console.log(deleteVideo, '<---- deleted video')
+
     } catch(err) {
-      console.log(err, 'this is the error')
+      res.redirect('/');
     }
   },
   edit: async (req, res) => {
@@ -42,7 +41,7 @@ module.exports = {
       const video = await Video.findByIdAndUpdate(req.params.id, req.body);
       res.redirect(`/user/${req.session.userId}`);
     }catch(err){
-      res.send(err);
+      res.redirect('/');
     }
   },
   updateLike: async (req, res) => {
@@ -55,12 +54,9 @@ module.exports = {
         videoLike.dislikes.splice(videoLike.dislikes.indexOf(req.session.userId), 1);
       };
       videoLike.save();
-      console.log(videoLike.likes,'<----- likes');
-      console.log(videoLike.dislikes,'<----- dislikes');
-      console.log(req.session.userId, '<---- the user');
       res.redirect('/');
     }catch(err) {
-      res.send(err);
+      res.redirect('/');
     }
   },
   updateDislike: async (req, res) => {
@@ -73,12 +69,9 @@ module.exports = {
         videoLike.likes.splice(videoLike.likes.indexOf(req.session.userId), 1);
       };
       videoLike.save();
-      console.log(videoLike.likes,'<----- likes');
-      console.log(videoLike.dislikes,'<----- dislikes');
-      console.log(req.session.userId, '<---- the user');
       res.redirect('/');
     }catch(err) {
-      res.send(err);
+      res.redirect('/');
     }
   },
   comments: async (req, res) => {
@@ -88,7 +81,7 @@ module.exports = {
     video.save();
     res.redirect(`/video/${req.params.id}`);
   }catch(err){
-    res.send(err)
+    res.redirect('/');
   }
 }
 }

@@ -159,7 +159,7 @@ section article {
 .autocomplete {
     background: white;
     text-align: center;
-    border-radius: 10px;
+    border-radius: 2px;
     position: absolute;
     top: 21%;
     color: white;

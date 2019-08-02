@@ -48,10 +48,8 @@ app.get('/', async (req, res) => {
       videos: displayVids,
       user: user
     });
-    // console.log(user, '<------ popular user');
-    // console.log(likedVideo, '<------ popular video');
   } catch(err){
-    console.log(err)
+    res.redirect('/');
   }
 });
 
@@ -59,10 +57,10 @@ app.put('/like', async (req, res) => {
   try{
 
   }catch(err) {
-    res.send(err);
+    res.redirect('/');
   }
 })
 
 app.listen(PORT, () => {
-  console.log('listening..... on port 3000');
+  
 });

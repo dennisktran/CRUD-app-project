@@ -21,7 +21,7 @@ module.exports = {
                 res.redirect('/')
             }
         } catch(err) {
-            res.rend(err);
+            res.redirect('/');
         }
     },
     logOut: async (req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
             const destroy = await req.session.destroy();
             res.redirect('/')
         } catch(err) {
-            res.send(err)
+            res.redirect('/')
         }
     },
     home: async (req, res) => {
@@ -52,7 +52,7 @@ module.exports = {
 
         } catch(err) {
             console.log(err)
-            res.send(err);
+            res.redirect('/');
         };
     },
     createUser: async (req, res) => {
@@ -68,7 +68,7 @@ module.exports = {
 
         } catch(err) {
             console.log(err)
-            res.send(err);
+            res.redirect('/');
         }
     },
     deleteUser: async (req, res) => {
@@ -84,7 +84,7 @@ module.exports = {
             const foundUser = await User.findByIdAndUpdate(req.params.id, req.body);
             res.redirect(`/user/${foundUser._id}`)
         }catch(err){
-            res.send(err)
+            res.redirect('/')
         }
     }
 }
