@@ -1,7 +1,9 @@
-# FORNITE MANIA! 
+# FORNITE MANIA!
 ## Join the ever popular Fortnite community!
 
 [Fortnite Mania](https://fornite-mania.herokuapp.com/ "Fortnite Mania") is a Fornite-centric website that allows **_YOU_** to watch and upload the biggest plays!
+
+![alt text](https://github.com/celestialsky/CRUD-app-project/blob/master/images/frontpage.jpg)
 
 Liked the highlight vid you just watched? Go ahead and **smash that like button**!
 Were the plays **weak and boring?** There's a *dislike button* for a reason!
