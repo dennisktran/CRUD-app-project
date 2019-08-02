@@ -48,8 +48,6 @@ app.get('/', async (req, res) => {
       videos: displayVids,
       user: user
     });
-    // console.log(user, '<------ popular user');
-    // console.log(likedVideo, '<------ popular video');
   } catch(err){
     console.log(err)
   }
