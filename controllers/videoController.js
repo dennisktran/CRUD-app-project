@@ -21,7 +21,7 @@ module.exports = {
         await findUser.save();
         res.redirect(`/user/${req.params.id}`);
     }catch(err) {
-        res.send(err);
+        res.redirect('/');
     }
   },
   delete: async (req, res) => {
@@ -39,7 +39,7 @@ module.exports = {
       const video = await Video.findByIdAndUpdate(req.params.id, req.body);
       res.redirect(`/user/${req.session.userId}`);
     }catch(err){
-      res.send(err);
+       res.redirect('/');
     }
   },
   updateLike: async (req, res) => {
@@ -54,7 +54,7 @@ module.exports = {
       videoLike.save();
       res.redirect('/');
     }catch(err) {
-      res.send(err);
+       res.redirect('/');
     }
   },
   updateDislike: async (req, res) => {
