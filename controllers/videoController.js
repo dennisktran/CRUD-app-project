@@ -21,11 +21,7 @@ module.exports = {
         await findUser.save();
         res.redirect(`/user/${req.params.id}`);
     }catch(err) {
-<<<<<<< HEAD
-      res.redirect('/');
-=======
         res.redirect('/');
->>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
     }
   },
   delete: async (req, res) => {
@@ -35,13 +31,7 @@ module.exports = {
       foundUser.videos.remove(req.params.id);
       await foundUser.save();
       res.redirect(`/user/${foundUser._id}`);
-<<<<<<< HEAD
-
     } catch(err) {
-      res.redirect('/');
-=======
-    } catch(err) {
->>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
     }
   },
   edit: async (req, res) => {
@@ -49,11 +39,7 @@ module.exports = {
       const video = await Video.findByIdAndUpdate(req.params.id, req.body);
       res.redirect(`/user/${req.session.userId}`);
     }catch(err){
-<<<<<<< HEAD
-      res.redirect('/');
-=======
        res.redirect('/');
->>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
     }
   },
   updateLike: async (req, res) => {
@@ -66,13 +52,9 @@ module.exports = {
         videoLike.dislikes.splice(videoLike.dislikes.indexOf(req.session.userId), 1);
       };
       videoLike.save();
-      res.redirect('/');
+      res.redirect(`/video/${req.params.id}`);
     }catch(err) {
-<<<<<<< HEAD
-      res.redirect('/');
-=======
        res.redirect('/');
->>>>>>> 2b061c0930d84fa87cb1ee0d3af130e28703145c
     }
   },
   updateDislike: async (req, res) => {
@@ -85,7 +67,7 @@ module.exports = {
         videoLike.likes.splice(videoLike.likes.indexOf(req.session.userId), 1);
       };
       videoLike.save();
-      res.redirect('/');
+      res.redirect(`/video/${req.params.id}`);
     }catch(err) {
       res.redirect('/');
     }
