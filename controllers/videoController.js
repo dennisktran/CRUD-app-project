@@ -52,7 +52,7 @@ module.exports = {
         videoLike.dislikes.splice(videoLike.dislikes.indexOf(req.session.userId), 1);
       };
       videoLike.save();
-      res.redirect('/');
+      res.redirect(`/video/${req.params.id}`);
     }catch(err) {
        res.redirect('/');
     }
@@ -67,9 +67,9 @@ module.exports = {
         videoLike.likes.splice(videoLike.likes.indexOf(req.session.userId), 1);
       };
       videoLike.save();
-      res.redirect('/');
+      res.redirect(`/video/${req.params.id}`);
     }catch(err) {
-      res.send(err);
+      res.redirect('/');
     }
   },
   comments: async (req, res) => {
@@ -79,7 +79,7 @@ module.exports = {
     video.save();
     res.redirect(`/video/${req.params.id}`);
   }catch(err){
-    res.send(err)
+    res.redirect('/');
   }
 }
 }

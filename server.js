@@ -3,8 +3,8 @@ const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 const session        = require('express-session')
 const app            = express();
-const userRoutes =  require('./routes/userRoutes');
-const videoRoutes =  require('./routes/videoRoutes');
+const userRoutes     = require('./routes/userRoutes');
+const videoRoutes    = require('./routes/videoRoutes');
 
 require('dotenv').config()
 const PORT = process.env.PORT
@@ -14,13 +14,12 @@ const Video = require('./models/Videos');
 
 require('./db/db');
 
-//INCLUDE ROUTES
+
 app.use(session({
   secret: 'THIS IS A RANDOM SECRET STRING',
   resave: false,
   saveUninitialized: false
 }));
-
 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
@@ -35,9 +34,14 @@ app.get('/', async (req, res) => {
     let mostLikes = 0;
     let likedVideo = {};
     for(let i = 0; i < displayVids.length; i++) {
-        if(displayVids[i].likes.length > mostLikes)
+        if(displayVids[i].likes.length > mostLikes) {
         mostLikes = displayVids[i].likes.length;
         likedVideo = displayVids[i];
+        console.log(displayVids[i], '<--- each video');
+        console.log(displayVids[i].likes.length, '<--- like length');
+        console.log(mostLikes, '<---- most likes');
+        console.log(likedVideo, '<------ liked video');
+        }
     }
     const user = await User.findOne({name: likedVideo.user}).populate('videos');
     res.render('index.ejs', {
@@ -48,7 +52,7 @@ app.get('/', async (req, res) => {
       user: user
     });
   } catch(err){
-      res.redirect('/');
+    res.redirect('/');
   }
 });
 
@@ -61,5 +65,5 @@ app.put('/like', async (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log('listening..... on port 3000');
+  
 });

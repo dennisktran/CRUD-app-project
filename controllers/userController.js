@@ -21,7 +21,7 @@ module.exports = {
                 res.redirect('/')
             }
         } catch(err) {
-            res.rend(err);
+            res.redirect('/');
         }
     },
     logOut: async (req, res) => {
